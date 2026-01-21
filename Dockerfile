@@ -28,5 +28,8 @@ EXPOSE 3000
 ENV NODE_ENV=production
 ENV PORT=3000
 
-# Start the application
+# Verify server file exists
+RUN ls -la server*.js && cat server-v3.js | head -5
+
+# Start the application using server-v3.js
 CMD ["node", "server-v3.js"]
