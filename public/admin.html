@@ -1242,7 +1242,7 @@
     // Dashboard
     async function loadDashboard() {
       try {
-        const res = await fetch('/api/admin/stats');
+        const res = await fetch('/api/admin/stats', { credentials: 'include' });
         const stats = await res.json();
         
         document.getElementById('stats-grid').innerHTML = `
@@ -1271,7 +1271,7 @@
     // Hero Images
     async function loadHeroImages() {
       try {
-        const res = await fetch('/api/admin/hero-images');
+        const res = await fetch('/api/admin/hero-images', { credentials: 'include' });
         const images = await res.json();
         
         document.getElementById('hero-grid').innerHTML = images.length ? images.map(img => `
@@ -1329,7 +1329,7 @@
     }
 
     async function editHero(id) {
-      const res = await fetch('/api/admin/hero-images');
+      const res = await fetch('/api/admin/hero-images', { credentials: 'include' });
       const images = await res.json();
       const hero = images.find(h => h.id === id);
       if (hero) openHeroModal(hero);
@@ -1364,7 +1364,7 @@
 
     async function deleteHero(id) {
       if (confirm('Are you sure you want to delete this hero image?')) {
-        await fetch(`/api/admin/hero-images/${id}`, { method: 'DELETE' });
+        await fetch(`/api/admin/hero-images/${id}`, { method: 'DELETE', credentials: 'include' });
         loadHeroImages();
       }
     }
@@ -1372,7 +1372,7 @@
     // Page Content
     async function loadContent() {
       try {
-        const res = await fetch('/api/admin/content');
+        const res = await fetch('/api/admin/content', { credentials: 'include' });
         const content = await res.json();
         
         document.getElementById('content-list').innerHTML = content.length ? content.map(item => `
@@ -1411,7 +1411,7 @@
     }
 
     async function editContent(key) {
-      const res = await fetch('/api/admin/content');
+      const res = await fetch('/api/admin/content', { credentials: 'include' });
       const content = await res.json();
       const item = content.find(c => c.section_key === key);
       if (item) openContentModal(item);
@@ -1444,7 +1444,7 @@
 
     async function translateContent(key) {
       if (confirm('Auto-translate English content to all other languages?')) {
-        await fetch(`/api/admin/content/${key}/translate`, { method: 'POST' });
+        await fetch(`/api/admin/content/${key}/translate`, { method: 'POST', credentials: 'include' });
         loadContent();
       }
     }
@@ -1463,7 +1463,7 @@
     // Partners
     async function loadPartners() {
       try {
-        const res = await fetch('/api/admin/partners');
+        const res = await fetch('/api/admin/partners', { credentials: 'include' });
         const partners = await res.json();
         
         document.getElementById('partners-table').innerHTML = partners.length ? partners.map(p => `
@@ -1519,7 +1519,7 @@
     }
 
     async function editPartner(id) {
-      const res = await fetch('/api/admin/partners');
+      const res = await fetch('/api/admin/partners', { credentials: 'include' });
       const partners = await res.json();
       const partner = partners.find(p => p.id === id);
       if (partner) openPartnerModal(partner);
@@ -1552,7 +1552,7 @@
 
     async function deletePartner(id) {
       if (confirm('Are you sure you want to delete this partner?')) {
-        await fetch(`/api/admin/partners/${id}`, { method: 'DELETE' });
+        await fetch(`/api/admin/partners/${id}`, { method: 'DELETE', credentials: 'include' });
         loadPartners();
       }
     }
@@ -1570,7 +1570,8 @@
         const res = await fetch('/api/admin/translate', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name, description: desc })
+          body: JSON.stringify({ name, description: desc }),
+          credentials: 'include'
         });
         const data = await res.json();
         
@@ -1597,7 +1598,7 @@
     // Settings
     async function loadSettings() {
       try {
-        const res = await fetch('/api/admin/settings');
+        const res = await fetch('/api/admin/settings', { credentials: 'include' });
         const settings = await res.json();
         
         const settingsConfig = [
@@ -1654,7 +1655,8 @@
       await fetch('/api/admin/settings', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ settings })
+        body: JSON.stringify({ settings }),
+        credentials: 'include'
       });
       
       alert('Settings saved successfully!');
@@ -1663,7 +1665,7 @@
     // Navigation
     async function loadNavigation() {
       try {
-        const res = await fetch('/api/admin/navigation');
+        const res = await fetch('/api/admin/navigation', { credentials: 'include' });
         const nav = await res.json();
         
         document.getElementById('navigation-table').innerHTML = nav.length ? nav.map(n => `
@@ -1686,7 +1688,7 @@
     // Files
     async function loadFiles() {
       try {
-        const res = await fetch('/api/admin/files');
+        const res = await fetch('/api/admin/files', { credentials: 'include' });
         const files = await res.json();
         
         document.getElementById('files-grid').innerHTML = files.length ? files.map(f => `
@@ -1712,14 +1714,14 @@
       const formData = new FormData();
       formData.append('file', input.files[0]);
       
-      await fetch('/api/admin/upload', { method: 'POST', body: formData });
+      await fetch('/api/admin/upload', { method: 'POST', body: formData, credentials: 'include' });
       input.value = '';
       loadFiles();
     }
 
     async function deleteFile(filename) {
       if (confirm('Delete this file?')) {
-        await fetch(`/api/admin/files/${filename}`, { method: 'DELETE' });
+        await fetch(`/api/admin/files/${filename}`, { method: 'DELETE', credentials: 'include' });
         loadFiles();
       }
     }
@@ -1758,7 +1760,8 @@
       await fetch(`/api/admin/memberships/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ status })
+        body: JSON.stringify({ status }),
+        credentials: 'include'
       });
       loadMemberships();
     }
