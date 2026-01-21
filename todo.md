@@ -1,71 +1,50 @@
-# CON-DFR Website Tasks
+# CON-DFR Website - Task Tracking
 
 ## Completed Tasks
 
-### 1. Hero Carousel Button Fix
-- [x] Modified CSS to move carousel indicators from `bottom: 4rem` to `bottom: 1.5rem`
-- [x] Added responsive fix changing from `bottom: 3rem` to `bottom: 1rem`
-- [x] Hidden scroll indicator when carousel is active
-- [x] Committed changes to git
-- [x] Pushed to GitHub (commit: 703be3c, ef086c9)
-- [ ] Waiting for Railway deployment to complete
+### 1. Hero Carousel Button Fix ✅ (Code Ready - Pending Deployment)
+- [x] Identified issue: Carousel indicator dots colliding with CTA buttons
+- [x] Modified CSS in `public/css/styles.css`:
+  - Changed `.hero-indicators` from `bottom: 4rem` to `bottom: 1.5rem`
+  - Changed responsive breakpoint from `bottom: 3rem` to `bottom: 1rem`
+- [x] Added cache-busting version parameter to CSS link in index.html
+- [x] Committed and pushed all changes to GitHub (master branch)
+- [ ] **PENDING**: Railway deployment needs manual trigger or webhook verification
 
-### 2. Partners Section Population
-- [x] Scraped 23 partners from con-dfr.org (19 organizations + 4 individuals)
-- [x] Created seed data endpoint in server-v3.js
-- [x] Populated database with all partners including:
-  - Hamnava Umbrella Group
-  - Dana Research Society
-  - Group 25 Shahrivar
-  - Democratic Turkmens of Iran
-  - Azerbaijan Democrat Party
-  - Ahwaz Assembly
-  - No to Execution Campaign
-  - Bakhtiari Unity Party
-  - Azerbaijan Democrat Fraction
-  - Iranian Republicans Australia (YAR)
-  - Woman Life Freedom Association Graz
-  - Center for Democracy and Development of Azerbaijan
-  - Iranian Republicans Convergence
-  - Toronto Iranian Republicans Association (TIRA)
-  - United for Iran Australia
-  - Iranian Republicans of Southern Sweden
-  - Rahe Farda Group
-  - Iran Democratic Left Party
-  - Mahsa Foundation
-  - Hassan Shariatmadari (Individual)
-  - Reza Moridi (Individual)
-  - Alan Ekbatani (Individual)
-  - Mehdi Ansari (Individual)
+### 2. Partners Section Population ✅
+- [x] Scraped and populated 23 partners from con-dfr.org
+- [x] 19 Organizations added with logos and descriptions
+- [x] 4 Individuals added with photos and descriptions
 - [x] All partners displaying correctly on production site
 
-### 3. Hero Images Section
-- [x] 5 hero images exist in database
-- [x] Hero carousel functioning on production
-- [ ] Hero images need Persian/multilingual translations
+### 3. Statements Section ✅
+- [x] 3 statements displaying on production site
 
-### 4. Statements Section
-- [x] 3 statements displaying on production:
-  - Condemnation of Islamic Regime Crimes in Iran (14 Jan 2025)
-  - Support for Immediate Formation of Strategic Council (12 Jan 2025)
-  - To the Oppressed and Free People of Iran (31 Dec 2025)
+### 4. Admin Panel ✅
+- [x] Admin panel accessible and functional
+- [x] Credentials verified: admin / Congress@2025!Secure
 
-## Pending Tasks
-
-### CSS Deployment
-- [ ] Verify Railway has deployed latest CSS fix
-- [ ] Confirm hero indicators no longer collide with CTA buttons
-
-### Content Enhancements (Optional)
-- [ ] Add Persian translations to hero images
-- [ ] Create local statement pages (currently linking to con-dfr.org)
-- [ ] Populate Page Content section in admin
-
-## Git Commits
-1. `703be3c` - Fix hero carousel indicators collision with CTA buttons
-2. `6b34f18` - Add populated database with partners and hero images
-3. `5aa422e` - Add seed data endpoint for initial database population
+## Git Commits (Latest First)
+1. `a290b5e` - Force rebuild v3.1 - CSS indicator fix
+2. `b2dfe84` - Trigger Railway deployment
+3. `8141dcd` - Add CSS cache-busting version parameter
 4. `ef086c9` - Force CSS cache refresh - hero indicator fix
+5. `5aa422e` - Add seed data endpoint for initial database population
+6. `6b34f18` - Add populated database with partners and hero images
+7. `703be3c` - Fix hero carousel indicators collision with CTA buttons
 
-## Production URL
-https://con-dfr-web-production.up.railway.app/
+## Current Issue
+Railway deployment is not automatically picking up GitHub changes. The local repository has all the correct fixes, but the production server is still serving old CSS.
+
+### To Fix Deployment:
+1. Log into Railway dashboard at https://railway.app
+2. Navigate to the con-dfr-web project
+3. Either:
+   - Manually trigger a redeploy from the latest commit
+   - Or verify that GitHub webhook is properly connected
+   - Or check deployment logs for any errors
+
+## URLs
+- **Production**: https://con-dfr-web-production.up.railway.app/
+- **GitHub**: https://github.com/babakpNinja/con-dfr-website.git
+- **Admin Panel**: https://con-dfr-web-production.up.railway.app/admin.html

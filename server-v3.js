@@ -521,6 +521,31 @@ app.get('/api/partners', (req, res) => {
   }
 });
 
+// Get partners by type (public)
+app.get('/api/partners/type/:type', (req, res) => {
+  try {
+    const { type } = req.params;
+    const partners = db.prepare('SELECT * FROM partners WHERE is_active = 1 AND partner_type = ? ORDER BY display_order, created_at').all(type);
+    res.json(partners);
+  } catch (error) {
+    res.status(500).json({ error: 'Database error' });
+  }
+});
+
+// Get single partner by ID (public)
+app.get('/api/partners/:id', (req, res) => {
+  try {
+    const { id } = req.params;
+    const partner = db.prepare('SELECT * FROM partners WHERE id = ? AND is_active = 1').get(id);
+    if (!partner) {
+      return res.status(404).json({ error: 'Partner not found' });
+    }
+    res.json(partner);
+  } catch (error) {
+    res.status(500).json({ error: 'Database error' });
+  }
+});
+
 // Submit membership application
 app.post('/api/membership', (req, res) => {
   try {
