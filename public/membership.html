@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Join the Congress of Democratic & Federalist Republicans - Apply for Membership">
+  <title>Join the Congress - CON-DFR</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Vazirmatn:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/styles.css">
+  <style>
+    .membership-page {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      padding: 2rem 1rem;
+    }
+    
+    .membership-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .membership-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    .membership-header img {
+      height: 80px;
+      margin-bottom: 1rem;
+    }
+    
+    .membership-header h1 {
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+    
+    .membership-header p {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+    }
+    
+    .membership-card {
+      background: white;
+      border-radius: var(--border-radius-lg);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    }
+    
+    .membership-progress {
+      display: flex;
+      background: var(--bg-secondary);
+      padding: 1rem;
+      gap: 0.5rem;
+    }
+    
+    .progress-step {
+      flex: 1;
+      text-align: center;
+      padding: 0.75rem;
+      border-radius: var(--border-radius-sm);
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      transition: all 0.3s ease;
+    }
+    
+    .progress-step.active {
+      background: var(--primary-color);
+      color: white;
+    }
+    
+    .progress-step.completed {
+      background: var(--success-color);
+      color: white;
+    }
+    
+    .membership-form {
+      padding: 2rem;
+    }
+    
+    .form-section {
+      display: none;
+    }
+    
+    .form-section.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+    
+    .form-section h3 {
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid var(--border-color);
+    }
+    
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+    
+    .form-group label .required {
+      color: var(--danger-color);
+    }
+    
+    .form-control {
+      width: 100%;
+      padding: 0.875rem 1rem;
+      border: 2px solid var(--border-color);
+      border-radius: var(--border-radius-sm);
+      font-size: 1rem;
+      transition: border-color 0.2s ease;
+    }
+    
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary-color);
+    }
+    
+    .form-control.error {
+      border-color: var(--danger-color);
+    }
+    
+    .error-message {
+      color: var(--danger-color);
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+    }
+    
+    .radio-group {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    
+    .radio-option {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+    }
+    
+    .radio-option input {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+    }
+    
+    .checkbox-group {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 1rem;
+      background: var(--bg-secondary);
+      border-radius: var(--border-radius-sm);
+      margin-top: 1rem;
+    }
+    
+    .checkbox-group input {
+      width: 20px;
+      height: 20px;
+      margin-top: 0.25rem;
+      cursor: pointer;
+    }
+    
+    .checkbox-group label {
+      margin-bottom: 0;
+      cursor: pointer;
+    }
+    
+    .form-buttons {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-color);
+    }
+    
+    .btn-back {
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+    }
+    
+    .success-message {
+      text-align: center;
+      padding: 3rem 2rem;
+    }
+    
+    .success-icon {
+      width: 80px;
+      height: 80px;
+      background: var(--success-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+    }
+    
+    .success-icon svg {
+      width: 40px;
+      height: 40px;
+      color: white;
+    }
+    
+    .success-message h2 {
+      color: var(--success-color);
+      margin-bottom: 1rem;
+    }
+    
+    .lang-switch {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      z-index: 100;
+    }
+    
+    [dir="rtl"] .lang-switch {
+      right: auto;
+      left: 1rem;
+    }
+    
+    @media (max-width: 600px) {
+      .membership-progress {
+        flex-direction: column;
+      }
+      
+      .form-buttons {
+        flex-direction: column;
+      }
+      
+      .form-buttons .btn {
+        width: 100%;
+      }
+    }
+  </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+  <div class="lang-switch">
+    <select id="lang-select" class="form-control" style="width: auto; padding: 0.5rem 1rem;">
+      <option value="en">🇬🇧 English</option>
+      <option value="fa">🇮🇷 فارسی</option>
+      <option value="tr">🇹🇷 Türkçe</option>
+      <option value="az">🇦🇿 Azərbaycan</option>
+      <option value="ar">🇸🇦 العربية</option>
+      <option value="zh">🇨🇳 中文</option>
+      <option value="es">🇪🇸 Español</option>
+    </select>
+  </div>
+
+  <div class="membership-page">
+    <div class="membership-container">
+      <div class="membership-header">
+        <a href="/">
+          <img src="https://con-dfr.org/wp-content/uploads/2026/01/2-2-768x293.jpg" alt="CON-DFR Logo">
+        </a>
+        <h1 data-i18n="membership.title">Join the Congress</h1>
+        <p data-i18n="membership.subtitle">Apply for membership in the Congress of Democratic & Federalist Republicans</p>
+      </div>
+      
+      <div class="membership-card">
+        <div class="membership-progress">
+          <div class="progress-step active" data-step="1">
+            <span data-i18n="membership.step1">1. Basic Info</span>
+          </div>
+          <div class="progress-step" data-step="2">
+            <span data-i18n="membership.step2">2. Details</span>
+          </div>
+          <div class="progress-step" data-step="3">
+            <span data-i18n="membership.step3">3. Confirm</span>
+          </div>
+        </div>
+        
+        <form id="membership-form" class="membership-form">
+          <!-- Step 1: Basic Information -->
+          <div class="form-section active" data-step="1">
+            <h3 data-i18n="membership.basicInfo">Basic Information</h3>
+            
+            <div class="form-group">
+              <label data-i18n="membership.applicantType">Applicant Type <span class="required">*</span></label>
+              <div class="radio-group">
+                <label class="radio-option">
+                  <input type="radio" name="applicant_type" value="individual" checked>
+                  <span data-i18n="membership.individual">Individual</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="applicant_type" value="organization">
+                  <span data-i18n="membership.organization">Organization/Party</span>
+                </label>
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="full_name" data-i18n="membership.fullName">Full Name <span class="required">*</span></label>
+                <input type="text" id="full_name" name="full_name" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="email" data-i18n="membership.email">Email Address <span class="required">*</span></label>
+                <input type="email" id="email" name="email" class="form-control" required>
+              </div>
+            </div>
+            
+            <div class="form-group" id="org-name-group" style="display: none;">
+              <label for="organization_name" data-i18n="membership.orgName">Organization/Party Name</label>
+              <input type="text" id="organization_name" name="organization_name" class="form-control">
+            </div>
+            
+            <div class="form-group">
+              <label data-i18n="membership.membershipType">Membership Type <span class="required">*</span></label>
+              <div class="radio-group">
+                <label class="radio-option">
+                  <input type="radio" name="membership_type" value="member" checked>
+                  <span data-i18n="membership.member">Full Member</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="membership_type" value="observer">
+                  <span data-i18n="membership.observer">Observer</span>
+                </label>
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="country" data-i18n="membership.country">Country</label>
+                <input type="text" id="country" name="country" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="city" data-i18n="membership.city">City</label>
+                <input type="text" id="city" name="city" class="form-control">
+              </div>
+            </div>
+            
+            <div class="form-buttons">
+              <a href="/" class="btn btn-back" data-i18n="membership.backToSite">← Back to Website</a>
+              <button type="button" class="btn btn-primary" onclick="nextStep(2)" data-i18n="membership.next">Next →</button>
+            </div>
+          </div>
+          
+          <!-- Step 2: Additional Details -->
+          <div class="form-section" data-step="2">
+            <h3 data-i18n="membership.additionalInfo">Additional Information</h3>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone" data-i18n="membership.phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="website" data-i18n="membership.website">Website</label>
+                <input type="url" id="website" name="website" class="form-control" placeholder="https://...">
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="social_media" data-i18n="membership.socialMedia">Social Media Links</label>
+              <input type="text" id="social_media" name="social_media" class="form-control" placeholder="Twitter, Instagram, etc.">
+            </div>
+            
+            <div class="form-group">
+              <label for="motivation" data-i18n="membership.motivation">Why do you want to join the Congress?</label>
+              <textarea id="motivation" name="motivation" class="form-control" rows="3"></textarea>
+            </div>
+            
+            <div class="form-group">
+              <label for="experience" data-i18n="membership.experience">Relevant Experience & Background</label>
+              <textarea id="experience" name="experience" class="form-control" rows="3"></textarea>
+            </div>
+            
+            <div class="form-group">
+              <label for="skills" data-i18n="membership.skills">Skills & Expertise</label>
+              <textarea id="skills" name="skills" class="form-control" rows="2" placeholder="e.g., Media, Legal, Organizing, Technology..."></textarea>
+            </div>
+            
+            <div class="form-group">
+              <label for="how_heard" data-i18n="membership.howHeard">How did you hear about us?</label>
+              <select id="how_heard" name="how_heard" class="form-control">
+                <option value="">-- Select --</option>
+                <option value="social_media">Social Media</option>
+                <option value="friend">Friend/Colleague</option>
+                <option value="event">Event/Conference</option>
+                <option value="news">News/Media</option>
+                <option value="search">Internet Search</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            
+            <div class="form-buttons">
+              <button type="button" class="btn btn-back" onclick="prevStep(1)" data-i18n="membership.back">← Back</button>
+              <button type="button" class="btn btn-primary" onclick="nextStep(3)" data-i18n="membership.next">Next →</button>
+            </div>
+          </div>
+          
+          <!-- Step 3: Confirmation -->
+          <div class="form-section" data-step="3">
+            <h3 data-i18n="membership.confirmation">Confirmation</h3>
+            
+            <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: var(--border-radius); margin-bottom: 1.5rem;">
+              <h4 style="margin-bottom: 1rem;" data-i18n="membership.mouTitle">8-Article Memorandum of Understanding</h4>
+              <p style="margin-bottom: 1rem; color: var(--text-secondary);" data-i18n="membership.mouDesc">
+                By joining the Congress, you agree to uphold the principles outlined in our 8-Article Memorandum of Understanding, which includes commitment to democracy, federalism, human rights, and secular governance.
+              </p>
+              <a href="https://con-dfr.org/wp-content/uploads/2026/01/TAFOHOM-NAMEH.pdf" target="_blank" class="btn btn-outline btn-sm" data-i18n="membership.readMou">
+                📄 Read Full MOU
+              </a>
+            </div>
+            
+            <div class="checkbox-group">
+              <input type="checkbox" id="agrees_to_mou" name="agrees_to_mou" required>
+              <label for="agrees_to_mou" data-i18n="membership.agreeToMou">
+                I confirm that I have read the 8-Article Memorandum of Understanding and agree to all its terms and principles. <span class="required">*</span>
+              </label>
+            </div>
+            
+            <div id="form-error" class="alert alert-error" style="display: none; margin-top: 1rem;"></div>
+            
+            <div class="form-buttons">
+              <button type="button" class="btn btn-back" onclick="prevStep(2)" data-i18n="membership.back">← Back</button>
+              <button type="submit" class="btn btn-primary btn-lg" data-i18n="membership.submit">Submit Application</button>
+            </div>
+          </div>
+          
+          <!-- Success Message -->
+          <div class="form-section" data-step="success">
+            <div class="success-message">
+              <div class="success-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <h2 data-i18n="membership.successTitle">Application Submitted!</h2>
+              <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;" data-i18n="membership.successMessage">
+                Thank you for your interest in joining the Congress of Democratic & Federalist Republicans. 
+                We will review your application and contact you soon.
+              </p>
+              <a href="/" class="btn btn-primary" data-i18n="membership.backToHome">Return to Homepage</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Translations
+    const translations = {
+      en: {
+        membership: {
+          title: "Join the Congress",
+          subtitle: "Apply for membership in the Congress of Democratic & Federalist Republicans",
+          step1: "1. Basic Info",
+          step2: "2. Details",
+          step3: "3. Confirm",
+          basicInfo: "Basic Information",
+          applicantType: "Applicant Type",
+          individual: "Individual",
+          organization: "Organization/Party",
+          fullName: "Full Name",
+          email: "Email Address",
+          orgName: "Organization/Party Name",
+          membershipType: "Membership Type",
+          member: "Full Member",
+          observer: "Observer",
+          country: "Country",
+          city: "City",
+          additionalInfo: "Additional Information",
+          phone: "Phone Number",
+          website: "Website",
+          socialMedia: "Social Media Links",
+          motivation: "Why do you want to join the Congress?",
+          experience: "Relevant Experience & Background",
+          skills: "Skills & Expertise",
+          howHeard: "How did you hear about us?",
+          confirmation: "Confirmation",
+          mouTitle: "8-Article Memorandum of Understanding",
+          mouDesc: "By joining the Congress, you agree to uphold the principles outlined in our 8-Article Memorandum of Understanding, which includes commitment to democracy, federalism, human rights, and secular governance.",
+          readMou: "📄 Read Full MOU",
+          agreeToMou: "I confirm that I have read the 8-Article Memorandum of Understanding and agree to all its terms and principles.",
+          backToSite: "← Back to Website",
+          back: "← Back",
+          next: "Next →",
+          submit: "Submit Application",
+          successTitle: "Application Submitted!",
+          successMessage: "Thank you for your interest in joining the Congress of Democratic & Federalist Republicans. We will review your application and contact you soon.",
+          backToHome: "Return to Homepage",
+          errorRequired: "Please fill in all required fields",
+          errorEmail: "Please enter a valid email address",
+          errorMou: "You must agree to the MOU to proceed"
+        }
+      },
+      fa: {
+        membership: {
+          title: "عضویت در کنگره",
+          subtitle: "درخواست عضویت در کنگره مشترک جمهوری خواهان دموکرات و فدرال دموکرات",
+          step1: "۱. اطلاعات پایه",
+          step2: "۲. جزئیات",
+          step3: "۳. تأیید",
+          basicInfo: "اطلاعات پایه",
+          applicantType: "نوع متقاضی",
+          individual: "شخص حقیقی",
+          organization: "گروه/حزب",
+          fullName: "نام کامل",
+          email: "آدرس ایمیل",
+          orgName: "نام گروه/حزب",
+          membershipType: "نوع عضویت",
+          member: "عضو",
+          observer: "ناظر",
+          country: "کشور",
+          city: "شهر",
+          additionalInfo: "اطلاعات تکمیلی",
+          phone: "شماره تلفن",
+          website: "وبسایت",
+          socialMedia: "لینک‌های شبکه‌های اجتماعی",
+          motivation: "چرا می‌خواهید به کنگره بپیوندید؟",
+          experience: "تجربه و سوابق مرتبط",
+          skills: "مهارت‌ها و تخصص‌ها",
+          howHeard: "چگونه از ما مطلع شدید؟",
+          confirmation: "تأیید",
+          mouTitle: "تفاهم‌نامه ۸ ماده‌ای",
+          mouDesc: "با پیوستن به کنگره، شما موافقت می‌کنید که اصول مندرج در تفاهم‌نامه ۸ ماده‌ای ما را رعایت کنید که شامل تعهد به دموکراسی، فدرالیسم، حقوق بشر و حکومت سکولار است.",
+          readMou: "📄 مطالعه تفاهم‌نامه کامل",
+          agreeToMou: "تأیید می‌کنم که تفاهم‌نامه ۸ ماده‌ای را مطالعه کرده و با همه بندهای آن موافقم.",
+          backToSite: "→ بازگشت به وبسایت",
+          back: "→ قبلی",
+          next: "← بعدی",
+          submit: "ارسال درخواست",
+          successTitle: "درخواست ارسال شد!",
+          successMessage: "از علاقه شما به پیوستن به کنگره مشترک جمهوری خواهان دموکرات و فدرال دموکرات متشکریم. درخواست شما بررسی شده و به زودی با شما تماس خواهیم گرفت.",
+          backToHome: "بازگشت به صفحه اصلی",
+          errorRequired: "لطفاً همه فیلدهای ضروری را پر کنید",
+          errorEmail: "لطفاً یک آدرس ایمیل معتبر وارد کنید",
+          errorMou: "برای ادامه باید با تفاهم‌نامه موافقت کنید"
+        }
+      },
+      ar: {
+        membership: {
+          title: "انضم إلى المؤتمر",
+          subtitle: "تقديم طلب العضوية في مؤتمر الجمهوريين الديمقراطيين والفيدراليين",
+          step1: "١. المعلومات الأساسية",
+          step2: "٢. التفاصيل",
+          step3: "٣. التأكيد",
+          basicInfo: "المعلومات الأساسية",
+          applicantType: "نوع المتقدم",
+          individual: "فرد",
+          organization: "منظمة/حزب",
+          fullName: "الاسم الكامل",
+          email: "البريد الإلكتروني",
+          orgName: "اسم المنظمة/الحزب",
+          membershipType: "نوع العضوية",
+          member: "عضو كامل",
+          observer: "مراقب",
+          country: "البلد",
+          city: "المدينة",
+          additionalInfo: "معلومات إضافية",
+          phone: "رقم الهاتف",
+          website: "الموقع الإلكتروني",
+          socialMedia: "روابط وسائل التواصل الاجتماعي",
+          motivation: "لماذا تريد الانضمام إلى المؤتمر؟",
+          experience: "الخبرة والخلفية ذات الصلة",
+          skills: "المهارات والخبرات",
+          howHeard: "كيف سمعت عنا؟",
+          confirmation: "التأكيد",
+          mouTitle: "مذكرة التفاهم المكونة من 8 مواد",
+          mouDesc: "بانضمامك إلى المؤتمر، فإنك توافق على التمسك بالمبادئ المنصوص عليها في مذكرة التفاهم المكونة من 8 مواد، والتي تشمل الالتزام بالديمقراطية والفيدرالية وحقوق الإنسان والحكم العلماني.",
+          readMou: "📄 قراءة مذكرة التفاهم الكاملة",
+          agreeToMou: "أؤكد أنني قرأت مذكرة التفاهم المكونة من 8 مواد وأوافق على جميع شروطها ومبادئها.",
+          backToSite: "← العودة إلى الموقع",
+          back: "← السابق",
+          next: "التالي →",
+          submit: "تقديم الطلب",
+          successTitle: "تم تقديم الطلب!",
+          successMessage: "شكراً لاهتمامك بالانضمام إلى مؤتمر الجمهوريين الديمقراطيين والفيدراليين. سنراجع طلبك ونتواصل معك قريباً.",
+          backToHome: "العودة إلى الصفحة الرئيسية",
+          errorRequired: "يرجى ملء جميع الحقول المطلوبة",
+          errorEmail: "يرجى إدخال عنوان بريد إلكتروني صالح",
+          errorMou: "يجب الموافقة على مذكرة التفاهم للمتابعة"
+        }
+      },
+      tr: {
+        membership: {
+          title: "Kongreye Katıl",
+          subtitle: "Demokrat ve Federalist Cumhuriyetçiler Kongresi'ne üyelik başvurusu",
+          step1: "1. Temel Bilgiler",
+          step2: "2. Detaylar",
+          step3: "3. Onay",
+          basicInfo: "Temel Bilgiler",
+          applicantType: "Başvuru Türü",
+          individual: "Bireysel",
+          organization: "Kuruluş/Parti",
+          fullName: "Tam Ad",
+          email: "E-posta Adresi",
+          orgName: "Kuruluş/Parti Adı",
+          membershipType: "Üyelik Türü",
+          member: "Tam Üye",
+          observer: "Gözlemci",
+          country: "Ülke",
+          city: "Şehir",
+          additionalInfo: "Ek Bilgiler",
+          phone: "Telefon Numarası",
+          website: "Web Sitesi",
+          socialMedia: "Sosyal Medya Bağlantıları",
+          motivation: "Neden Kongreye katılmak istiyorsunuz?",
+          experience: "İlgili Deneyim ve Geçmiş",
+          skills: "Beceriler ve Uzmanlık",
+          howHeard: "Bizden nasıl haberdar oldunuz?",
+          confirmation: "Onay",
+          mouTitle: "8 Maddelik Mutabakat Zaptı",
+          mouDesc: "Kongreye katılarak, demokrasi, federalizm, insan hakları ve laik yönetime bağlılığı içeren 8 Maddelik Mutabakat Zaptımızda belirtilen ilkeleri desteklemeyi kabul ediyorsunuz.",
+          readMou: "📄 Tam Mutabakatı Oku",
+          agreeToMou: "8 Maddelik Mutabakat Zaptını okuduğumu ve tüm şartlarını ve ilkelerini kabul ettiğimi onaylıyorum.",
+          backToSite: "← Web Sitesine Dön",
+          back: "← Geri",
+          next: "İleri →",
+          submit: "Başvuruyu Gönder",
+          successTitle: "Başvuru Gönderildi!",
+          successMessage: "Demokrat ve Federalist Cumhuriyetçiler Kongresi'ne katılma ilginiz için teşekkür ederiz. Başvurunuzu inceleyip sizinle yakında iletişime geçeceğiz.",
+          backToHome: "Ana Sayfaya Dön",
+          errorRequired: "Lütfen tüm gerekli alanları doldurun",
+          errorEmail: "Lütfen geçerli bir e-posta adresi girin",
+          errorMou: "Devam etmek için mutabakatı kabul etmelisiniz"
+        }
+      },
+      az: {
+        membership: {
+          title: "Konqresə Qoşul",
+          subtitle: "Demokrat və Federalist Respublikaçılar Konqresinə üzvlük müraciəti",
+          step1: "1. Əsas Məlumat",
+          step2: "2. Təfərrüatlar",
+          step3: "3. Təsdiq",
+          basicInfo: "Əsas Məlumat",
+          applicantType: "Müraciət Növü",
+          individual: "Fərdi",
+          organization: "Təşkilat/Partiya",
+          fullName: "Tam Ad",
+          email: "E-poçt Ünvanı",
+          orgName: "Təşkilat/Partiya Adı",
+          membershipType: "Üzvlük Növü",
+          member: "Tam Üzv",
+          observer: "Müşahidəçi",
+          country: "Ölkə",
+          city: "Şəhər",
+          additionalInfo: "Əlavə Məlumat",
+          phone: "Telefon Nömrəsi",
+          website: "Veb Sayt",
+          socialMedia: "Sosial Media Linkləri",
+          motivation: "Niyə Konqresə qoşulmaq istəyirsiniz?",
+          experience: "Müvafiq Təcrübə və Keçmiş",
+          skills: "Bacarıqlar və Ekspertiza",
+          howHeard: "Bizdən necə xəbər tutdunuz?",
+          confirmation: "Təsdiq",
+          mouTitle: "8 Maddəlik Anlaşma Memorandumu",
+          mouDesc: "Konqresə qoşulmaqla, demokratiya, federalizm, insan haqları və dünyəvi idarəçiliyə sadiqliyi əhatə edən 8 Maddəlik Anlaşma Memorandumunda göstərilən prinsipləri dəstəkləməyə razılaşırsınız.",
+          readMou: "📄 Tam Anlaşmanı Oxu",
+          agreeToMou: "8 Maddəlik Anlaşma Memorandumunu oxuduğumu və bütün şərtləri və prinsipləri ilə razılaşdığımı təsdiq edirəm.",
+          backToSite: "← Veb Sayta Qayıt",
+          back: "← Geri",
+          next: "İrəli →",
+          submit: "Müraciəti Göndər",
+          successTitle: "Müraciət Göndərildi!",
+          successMessage: "Demokrat və Federalist Respublikaçılar Konqresinə qoşulmaq marağınız üçün təşəkkür edirik. Müraciətinizi nəzərdən keçirəcək və tezliklə sizinlə əlaqə saxlayacağıq.",
+          backToHome: "Ana Səhifəyə Qayıt",
+          errorRequired: "Zəhmət olmasa bütün tələb olunan sahələri doldurun",
+          errorEmail: "Zəhmət olmasa düzgün e-poçt ünvanı daxil edin",
+          errorMou: "Davam etmək üçün anlaşma ilə razılaşmalısınız"
+        }
+      },
+      zh: {
+        membership: {
+          title: "加入大会",
+          subtitle: "申请加入民主与联邦共和党人大会",
+          step1: "1. 基本信息",
+          step2: "2. 详细信息",
+          step3: "3. 确认",
+          basicInfo: "基本信息",
+          applicantType: "申请人类型",
+          individual: "个人",
+          organization: "组织/政党",
+          fullName: "全名",
+          email: "电子邮件地址",
+          orgName: "组织/政党名称",
+          membershipType: "会员类型",
+          member: "正式会员",
+          observer: "观察员",
+          country: "国家",
+          city: "城市",
+          additionalInfo: "附加信息",
+          phone: "电话号码",
+          website: "网站",
+          socialMedia: "社交媒体链接",
+          motivation: "您为什么想加入大会？",
+          experience: "相关经验和背景",
+          skills: "技能和专长",
+          howHeard: "您是如何了解我们的？",
+          confirmation: "确认",
+          mouTitle: "八条谅解备忘录",
+          mouDesc: "加入大会即表示您同意遵守我们八条谅解备忘录中规定的原则，包括对民主、联邦制、人权和世俗治理的承诺。",
+          readMou: "📄 阅读完整谅解备忘录",
+          agreeToMou: "我确认已阅读八条谅解备忘录并同意其所有条款和原则。",
+          backToSite: "← 返回网站",
+          back: "← 上一步",
+          next: "下一步 →",
+          submit: "提交申请",
+          successTitle: "申请已提交！",
+          successMessage: "感谢您有兴趣加入民主与联邦共和党人大会。我们将审核您的申请并尽快与您联系。",
+          backToHome: "返回首页",
+          errorRequired: "请填写所有必填字段",
+          errorEmail: "请输入有效的电子邮件地址",
+          errorMou: "您必须同意谅解备忘录才能继续"
+        }
+      },
+      es: {
+        membership: {
+          title: "Únete al Congreso",
+          subtitle: "Solicita membresía en el Congreso de Republicanos Democráticos y Federalistas",
+          step1: "1. Info Básica",
+          step2: "2. Detalles",
+          step3: "3. Confirmar",
+          basicInfo: "Información Básica",
+          applicantType: "Tipo de Solicitante",
+          individual: "Individual",
+          organization: "Organización/Partido",
+          fullName: "Nombre Completo",
+          email: "Correo Electrónico",
+          orgName: "Nombre de Organización/Partido",
+          membershipType: "Tipo de Membresía",
+          member: "Miembro Pleno",
+          observer: "Observador",
+          country: "País",
+          city: "Ciudad",
+          additionalInfo: "Información Adicional",
+          phone: "Número de Teléfono",
+          website: "Sitio Web",
+          socialMedia: "Enlaces de Redes Sociales",
+          motivation: "¿Por qué quieres unirte al Congreso?",
+          experience: "Experiencia y Antecedentes Relevantes",
+          skills: "Habilidades y Experiencia",
+          howHeard: "¿Cómo supiste de nosotros?",
+          confirmation: "Confirmación",
+          mouTitle: "Memorando de Entendimiento de 8 Artículos",
+          mouDesc: "Al unirte al Congreso, aceptas defender los principios establecidos en nuestro Memorando de Entendimiento de 8 Artículos, que incluye el compromiso con la democracia, el federalismo, los derechos humanos y la gobernanza secular.",
+          readMou: "📄 Leer Memorando Completo",
+          agreeToMou: "Confirmo que he leído el Memorando de Entendimiento de 8 Artículos y acepto todos sus términos y principios.",
+          backToSite: "← Volver al Sitio",
+          back: "← Atrás",
+          next: "Siguiente →",
+          submit: "Enviar Solicitud",
+          successTitle: "¡Solicitud Enviada!",
+          successMessage: "Gracias por tu interés en unirte al Congreso de Republicanos Democráticos y Federalistas. Revisaremos tu solicitud y te contactaremos pronto.",
+          backToHome: "Volver a Inicio",
+          errorRequired: "Por favor completa todos los campos requeridos",
+          errorEmail: "Por favor ingresa un correo electrónico válido",
+          errorMou: "Debes aceptar el memorando para continuar"
+        }
+      }
+    };
+    
+    let currentLang = localStorage.getItem('lang') || 'en';
+    let currentStep = 1;
+    
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      setLanguage(currentLang);
+      document.getElementById('lang-select').value = currentLang;
+      
+      // Language selector
+      document.getElementById('lang-select').addEventListener('change', (e) => {
+        setLanguage(e.target.value);
+      });
+      
+      // Applicant type toggle
+      document.querySelectorAll('input[name="applicant_type"]').forEach(radio => {
+        radio.addEventListener('change', (e) => {
+          document.getElementById('org-name-group').style.display = 
+            e.target.value === 'organization' ? 'block' : 'none';
+        });
+      });
+      
+      // Form submission
+      document.getElementById('membership-form').addEventListener('submit', handleSubmit);
+    });
+    
+    function setLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('lang', lang);
+      
+      const isRTL = ['fa', 'ar'].includes(lang);
+      document.documentElement.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
+      document.documentElement.setAttribute('lang', lang);
+      
+      translatePage();
+    }
+    
+    function translatePage() {
+      const t = translations[currentLang]?.membership || translations.en.membership;
+      
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n.replace('membership.', '');
+        if (t[key]) {
+          if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+            el.placeholder = t[key];
+          } else {
+            // Preserve required asterisk
+            const hasRequired = el.querySelector('.required');
+            el.innerHTML = t[key];
+            if (hasRequired || el.innerHTML.includes('*')) {
+              el.innerHTML = el.innerHTML.replace('*', '<span class="required">*</span>');
+            }
+          }
+        }
+      });
+    }
+    
+    function nextStep(step) {
+      // Validate current step
+      if (!validateStep(currentStep)) return;
+      
+      // Update progress
+      document.querySelector(`.progress-step[data-step="${currentStep}"]`).classList.remove('active');
+      document.querySelector(`.progress-step[data-step="${currentStep}"]`).classList.add('completed');
+      document.querySelector(`.progress-step[data-step="${step}"]`).classList.add('active');
+      
+      // Show next section
+      document.querySelector(`.form-section[data-step="${currentStep}"]`).classList.remove('active');
+      document.querySelector(`.form-section[data-step="${step}"]`).classList.add('active');
+      
+      currentStep = step;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    function prevStep(step) {
+      document.querySelector(`.progress-step[data-step="${currentStep}"]`).classList.remove('active');
+      document.querySelector(`.progress-step[data-step="${step}"]`).classList.remove('completed');
+      document.querySelector(`.progress-step[data-step="${step}"]`).classList.add('active');
+      
+      document.querySelector(`.form-section[data-step="${currentStep}"]`).classList.remove('active');
+      document.querySelector(`.form-section[data-step="${step}"]`).classList.add('active');
+      
+      currentStep = step;
+    }
+    
+    function validateStep(step) {
+      const t = translations[currentLang]?.membership || translations.en.membership;
+      
+      if (step === 1) {
+        const fullName = document.getElementById('full_name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        
+        if (!fullName || !email) {
+          showError(t.errorRequired);
+          return false;
+        }
+        
+        if (!isValidEmail(email)) {
+          showError(t.errorEmail);
+          return false;
+        }
+      }
+      
+      if (step === 3) {
+        const agreesToMou = document.getElementById('agrees_to_mou').checked;
+        if (!agreesToMou) {
+          showError(t.errorMou);
+          return false;
+        }
+      }
+      
+      hideError();
+      return true;
+    }
+    
+    function isValidEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+    
+    function showError(message) {
+      const errorDiv = document.getElementById('form-error');
+      errorDiv.textContent = message;
+      errorDiv.style.display = 'flex';
+    }
+    
+    function hideError() {
+      document.getElementById('form-error').style.display = 'none';
+    }
+    
+    async function handleSubmit(e) {
+      e.preventDefault();
+      
+      if (!validateStep(3)) return;
+      
+      const formData = new FormData(e.target);
+      const data = Object.fromEntries(formData.entries());
+      data.agrees_to_mou = document.getElementById('agrees_to_mou').checked;
+      
+      try {
+        const response = await fetch('/api/membership', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        
+        const result = await response.json();
+        
+        if (result.success) {
+          // Show success
+          document.querySelectorAll('.progress-step').forEach(s => s.classList.add('completed'));
+          document.querySelector('.form-section.active').classList.remove('active');
+          document.querySelector('.form-section[data-step="success"]').classList.add('active');
+        } else {
+          showError(result.message || 'Error submitting application');
+        }
+      } catch (error) {
+        showError('Network error. Please try again.');
+      }
+    }
+  </script>
+</body>
+</html>
