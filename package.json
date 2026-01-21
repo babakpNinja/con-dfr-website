@@ -2,13 +2,13 @@
   "name": "con-dfr-website",
   "version": "1.0.0",
   "description": "Congress of Democratic & Federalist Republicans - Modernized Website",
-  "main": "server-v2.js",
+  "main": "server-v3.js",
   "engines": {
     "node": ">=18.0.0"
   },
   "scripts": {
-    "start": "node server-v2.js",
-    "dev": "node server-v2.js"
+    "start": "node server-v3.js",
+    "dev": "node server-v3.js"
   },
   "dependencies": {
     "express": "^4.18.2",

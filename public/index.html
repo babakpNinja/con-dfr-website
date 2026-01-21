@@ -68,12 +68,36 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero" id="home">
+  <!-- Hero Section with Carousel -->
+  <section class="hero hero-carousel" id="home">
+    <!-- Carousel Slides -->
+    <div class="hero-slides" id="hero-slides">
+      <!-- Slides will be loaded dynamically -->
+      <div class="hero-slide active" style="background-image: url('/images/hero/hero1.png')"></div>
+    </div>
+    
+    <!-- Carousel Indicators -->
+    <div class="hero-indicators" id="hero-indicators">
+      <!-- Indicators will be generated dynamically -->
+    </div>
+    
+    <!-- Carousel Navigation -->
+    <button class="hero-nav hero-nav-prev" id="hero-prev" aria-label="Previous slide">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M15 18l-6-6 6-6"/>
+      </svg>
+    </button>
+    <button class="hero-nav hero-nav-next" id="hero-next" aria-label="Next slide">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M9 18l6-6-6-6"/>
+      </svg>
+    </button>
+    
+    <!-- Hero Content Overlay -->
     <div class="hero-content animate-fade-in">
       <div class="hero-badge" data-i18n="hero.badge">For a Democratic Iran</div>
-      <h1 data-i18n="hero.title">Congress of Democratic & Federalist Republicans</h1>
-      <p class="hero-subtitle" data-i18n="hero.subtitle">For freedom, justice, equality, and the distribution of power in the future of Iran</p>
+      <h1 id="hero-title" data-i18n="hero.title">Congress of Democratic & Federalist Republicans</h1>
+      <p class="hero-subtitle" id="hero-subtitle" data-i18n="hero.subtitle">For freedom, justice, equality, and the distribution of power in the future of Iran</p>
       <div class="hero-buttons">
         <a href="/membership.html" class="btn btn-secondary btn-lg" data-i18n="hero.joinBtn">Join the Congress</a>
         <a href="#about" class="btn btn-outline-light btn-lg" data-i18n="hero.learnBtn">Learn More</a>
@@ -403,5 +427,6 @@
   <!-- Scripts -->
   <script src="/js/translations.js"></script>
   <script src="/js/main.js"></script>
+  <script src="/js/carousel.js"></script>
 </body>
 </html>
