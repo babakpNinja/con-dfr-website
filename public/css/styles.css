@@ -1875,7 +1875,7 @@ textarea.form-control {
 /* Carousel Indicators */
 .hero-indicators {
   position: absolute;
-  bottom: 4rem;
+  bottom: 1.5rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 20;
@@ -1905,10 +1905,9 @@ textarea.form-control {
   transform: scale(1.2);
 }
 
-/* Adjust scroll indicator position for carousel */
+/* Hide scroll indicator when carousel is active - indicators serve as navigation */
 .hero.hero-carousel .hero-scroll {
-  bottom: 1rem;
-  z-index: 20;
+  display: none;
 }
 
 /* Responsive adjustments for carousel */
@@ -1936,7 +1935,7 @@ textarea.form-control {
   }
   
   .hero-indicators {
-    bottom: 3rem;
+    bottom: 1rem;
   }
   
   .hero-indicator {
