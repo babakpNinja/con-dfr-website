@@ -10,7 +10,7 @@ const crypto = require('crypto');
 const https = require('https');
 
 const app = express();
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3000;
 
 // CORS middleware for sandbox environment
 app.use((req, res, next) => {

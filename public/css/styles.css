@@ -428,6 +428,7 @@ a:hover {
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
+  margin-bottom: 3rem; /* Space for carousel indicators */
 }
 
 .hero-scroll {
@@ -1876,7 +1877,7 @@ textarea.form-control {
 /* Carousel Indicators */
 .hero-indicators {
   position: absolute;
-  bottom: 1.5rem;
+  bottom: 0.75rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 20;
