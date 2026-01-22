@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
   initLanguageSelector();
   loadPartners();
+  loadStatements();
   initPartnerTabs();
   initSmoothScroll();
 });
@@ -48,8 +49,12 @@ function setLanguage(lang) {
   // Translate all elements
   translatePage();
   
-  // Reload partners with new language
+  // Reload partners and statements with new language
   loadPartners();
+  loadStatements();
+  
+  // Dispatch language changed event for other components
+  document.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang } }));
 }
 
 function translatePage() {
@@ -167,6 +172,68 @@ function initSmoothScroll() {
       }
     });
   });
+}
+
+// Statements
+async function loadStatements() {
+  try {
+    const response = await fetch('/api/statements');
+    const statements = await response.json();
+    renderStatements(statements);
+  } catch (error) {
+    console.error('Error loading statements:', error);
+    document.getElementById('statements-list').innerHTML = '<p>Error loading statements.</p>';
+  }
+}
+
+function renderStatements(statements) {
+  const container = document.getElementById('statements-list');
+  if (!container) return;
+  
+  const lang = window.currentLanguage || 'en';
+  
+  if (!statements || statements.length === 0) {
+    container.innerHTML = '<p>No statements available.</p>';
+    return;
+  }
+  
+  container.innerHTML = statements.map(statement => {
+    const title = statement[`title_${lang}`] || statement.title_en || statement.title_fa || 'Untitled';
+    const date = formatStatementDate(statement.date, lang);
+    
+    return `
+      <a href="/statement.html?id=${statement.id}" class="statement-item">
+        <div class="statement-info">
+          <h4>${escapeHtml(title)}</h4>
+          <span class="statement-date">${date}</span>
+        </div>
+        <svg class="statement-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    `;
+  }).join('');
+}
+
+function formatStatementDate(dateStr, lang) {
+  const date = new Date(dateStr);
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  const locales = {
+    en: 'en-US',
+    fa: 'fa-IR',
+    tr: 'tr-TR',
+    az: 'az-AZ',
+    ar: 'ar-SA',
+    zh: 'zh-CN',
+    es: 'es-ES'
+  };
+  return date.toLocaleDateString(locales[lang] || 'en-US', options);
+}
+
+function escapeHtml(text) {
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
 }
 
 // Partners

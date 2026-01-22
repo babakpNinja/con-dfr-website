@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Statement from the Congress of Democratic & Federalist Republicans">
+  <title>Statement - CON-DFR</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Vazirmatn:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/styles.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://con-dfr.org/wp-content/uploads/2026/01/2-2-768x293.jpg">
+  
+  <style>
+    .statement-page {
+      padding-top: calc(var(--header-height) + 2rem);
+      min-height: 100vh;
+      background: var(--bg-secondary);
+    }
+    
+    .statement-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    
+    .statement-header {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-md);
+    }
+    
+    .statement-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+    
+    .statement-date {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .statement-date svg {
+      width: 16px;
+      height: 16px;
+    }
+    
+    .statement-title {
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      color: var(--text-primary);
+      margin-bottom: 0;
+      line-height: 1.3;
+    }
+    
+    .statement-content {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-md);
+    }
+    
+    .statement-content p {
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+      color: var(--text-primary);
+    }
+    
+    .statement-content p:last-child {
+      margin-bottom: 0;
+    }
+    
+    .statement-signature {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-color);
+      font-weight: 600;
+      color: var(--primary);
+    }
+    
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--primary);
+      text-decoration: none;
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+      transition: color var(--transition-fast);
+    }
+    
+    .back-link:hover {
+      color: var(--primary-dark);
+    }
+    
+    .back-link svg {
+      width: 20px;
+      height: 20px;
+    }
+    
+    /* RTL Support */
+    [dir="rtl"] .back-link svg {
+      transform: rotate(180deg);
+    }
+    
+    .statement-nav {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-color);
+    }
+    
+    .statement-nav a {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    .statement-nav a:hover {
+      color: var(--primary-dark);
+    }
+    
+    @media (max-width: 768px) {
+      .statement-container {
+        padding: 1rem;
+      }
+      
+      .statement-header,
+      .statement-content {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="header-content">
+      <a href="/" class="logo">
+        <img src="https://con-dfr.org/wp-content/uploads/2026/01/2-2-768x293.jpg" alt="CON-DFR Logo" id="logo-img">
+        <div class="logo-text">
+          <span id="logo-title">CON-DFR</span>
+        </div>
+      </a>
+      
+      <nav class="nav">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="/#home" data-i18n="nav.home">Home</a></li>
+          <li><a href="/#about" data-i18n="nav.about">About</a></li>
+          <li><a href="/#partners" data-i18n="nav.partners">Partners</a></li>
+          <li><a href="/#statements" class="active" data-i18n="nav.statements">Statements</a></li>
+          <li><a href="/#mou" data-i18n="nav.mou">MOU</a></li>
+          <li><a href="/#contact" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+        
+        <div class="lang-selector">
+          <button class="lang-btn" id="lang-btn">
+            <span id="current-lang">EN</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </button>
+          <div class="lang-dropdown" id="lang-dropdown">
+            <a href="#" data-lang="en" class="active">🇬🇧 English</a>
+            <a href="#" data-lang="fa">🇮🇷 فارسی</a>
+            <a href="#" data-lang="tr">🇹🇷 Türkçe</a>
+            <a href="#" data-lang="az">🇦🇿 Azərbaycan</a>
+            <a href="#" data-lang="ar">🇸🇦 العربية</a>
+            <a href="#" data-lang="zh">🇨🇳 中文</a>
+            <a href="#" data-lang="es">🇪🇸 Español</a>
+          </div>
+        </div>
+        
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Statement Page -->
+  <main class="statement-page">
+    <div class="statement-container">
+      <a href="/#statements" class="back-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        <span data-i18n="statements.backToStatements">Back to Statements</span>
+      </a>
+      
+      <article class="statement-header">
+        <div class="statement-meta">
+          <span class="statement-date">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+            <span id="statement-date"></span>
+          </span>
+        </div>
+        <h1 class="statement-title" id="statement-title"></h1>
+      </article>
+      
+      <div class="statement-content" id="statement-content">
+        <!-- Content will be loaded dynamically -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3 data-i18n="footer.about">About CON-DFR</h3>
+          <p data-i18n="footer.aboutText">Congress of Democratic & Federalist Republicans - Working for freedom, justice, equality, and the distribution of power in the future of Iran.</p>
+        </div>
+        <div class="footer-section">
+          <h3 data-i18n="footer.links">Quick Links</h3>
+          <ul>
+            <li><a href="/#about" data-i18n="nav.about">About</a></li>
+            <li><a href="/#partners" data-i18n="nav.partners">Partners</a></li>
+            <li><a href="/#statements" data-i18n="nav.statements">Statements</a></li>
+            <li><a href="/#contact" data-i18n="nav.contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3 data-i18n="footer.connect">Connect</h3>
+          <div class="social-links">
+            <a href="https://x.com/con_dem_fed_rep/" target="_blank" aria-label="Twitter">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/con_dem_fed_rep/" target="_blank" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://t.me/con_dfr" target="_blank" aria-label="Telegram">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/@Con_Dem_Fed_Rep" target="_blank" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Congress of Democratic & Federalist Republicans. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/js/i18n.js"></script>
+  <script src="/js/main.js"></script>
+  <script>
+    // Get statement ID from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const statementId = urlParams.get('id');
+    
+    // Statement data (will be loaded from API)
+    let statementData = null;
+    
+    // Load statement
+    async function loadStatement() {
+      try {
+        const response = await fetch(`/api/statements/${statementId}`);
+        if (!response.ok) throw new Error('Statement not found');
+        statementData = await response.json();
+        renderStatement();
+      } catch (error) {
+        console.error('Error loading statement:', error);
+        document.getElementById('statement-title').textContent = 'Statement not found';
+        document.getElementById('statement-content').innerHTML = '<p>The requested statement could not be found.</p>';
+      }
+    }
+    
+    // Render statement in current language
+    function renderStatement() {
+      if (!statementData) return;
+      
+      const lang = window.currentLanguage || 'en';
+      const title = statementData[`title_${lang}`] || statementData.title_en || statementData.title_fa;
+      const content = statementData[`content_${lang}`] || statementData.content_en || statementData.content_fa;
+      
+      document.getElementById('statement-title').textContent = title;
+      document.getElementById('statement-date').textContent = formatDate(statementData.date, lang);
+      
+      // Convert content to paragraphs
+      const paragraphs = content.split('\n\n').filter(p => p.trim());
+      document.getElementById('statement-content').innerHTML = paragraphs
+        .map(p => `<p>${p.replace(/\n/g, '<br>')}</p>`)
+        .join('');
+      
+      // Update page title
+      document.title = `${title} - CON-DFR`;
+    }
+    
+    // Format date based on language
+    function formatDate(dateStr, lang) {
+      const date = new Date(dateStr);
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      const locales = {
+        en: 'en-US',
+        fa: 'fa-IR',
+        tr: 'tr-TR',
+        az: 'az-AZ',
+        ar: 'ar-SA',
+        zh: 'zh-CN',
+        es: 'es-ES'
+      };
+      return date.toLocaleDateString(locales[lang] || 'en-US', options);
+    }
+    
+    // Listen for language changes
+    document.addEventListener('languageChanged', () => {
+      renderStatement();
+    });
+    
+    // Load statement on page load
+    if (statementId) {
+      loadStatement();
+    } else {
+      document.getElementById('statement-title').textContent = 'No statement specified';
+      document.getElementById('statement-content').innerHTML = '<p>Please select a statement from the <a href="/#statements">statements page</a>.</p>';
+    }
+  </script>
+</body>
+</html>

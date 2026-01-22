@@ -1,0 +1,26 @@
+Processing statement 1/3: مردم ستم دیده و آزاده ایران...
+  -> en ✓
+  -> tr ✓
+  -> az ✓
+  -> ar ✓
+  -> zh ✓
+  -> es ✓
+  Statement 1 complete!
+Processing statement 2/3: حمایت از تشکیل فوری شورای راهب...
+  -> en ✓
+  -> tr ✓
+  -> az ✓
+  -> ar ✓
+  -> zh ✓
+  -> es ✓
+  Statement 2 complete!
+Processing statement 3/3: محکومیت جنایات رژیم اسلامی در ...
+  -> en ✓
+  -> tr ✓
+  -> az ✓
+  -> ar ✓
+  -> zh ✓
+  -> es ✓
+  Statement 3 complete!
+
+All translations saved to statements_translated.json

@@ -275,11 +275,37 @@ db.exec(`
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
   );
 
+  CREATE TABLE IF NOT EXISTS statements (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    slug TEXT UNIQUE NOT NULL,
+    date DATE NOT NULL,
+    title_en TEXT,
+    title_fa TEXT,
+    title_tr TEXT,
+    title_az TEXT,
+    title_ar TEXT,
+    title_zh TEXT,
+    title_es TEXT,
+    content_en TEXT,
+    content_fa TEXT,
+    content_tr TEXT,
+    content_az TEXT,
+    content_ar TEXT,
+    content_zh TEXT,
+    content_es TEXT,
+    display_order INTEGER DEFAULT 0,
+    is_active INTEGER DEFAULT 1,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+  );
+
   CREATE INDEX IF NOT EXISTS idx_memberships_status ON memberships(status);
   CREATE INDEX IF NOT EXISTS idx_memberships_email ON memberships(email);
   CREATE INDEX IF NOT EXISTS idx_partners_type ON partners(partner_type);
   CREATE INDEX IF NOT EXISTS idx_hero_images_order ON hero_images(display_order);
   CREATE INDEX IF NOT EXISTS idx_page_content_key ON page_content(section_key);
+  CREATE INDEX IF NOT EXISTS idx_statements_date ON statements(date);
+  CREATE INDEX IF NOT EXISTS idx_statements_slug ON statements(slug);
 `);
 
 // Initialize default site settings
@@ -557,6 +583,35 @@ app.get('/api/partners/:id', (req, res) => {
       return res.status(404).json({ error: 'Partner not found' });
     }
     res.json(partner);
+  } catch (error) {
+    res.status(500).json({ error: 'Database error' });
+  }
+});
+
+// Get all statements (public)
+app.get('/api/statements', (req, res) => {
+  try {
+    const statements = db.prepare('SELECT * FROM statements WHERE is_active = 1 ORDER BY date DESC, display_order').all();
+    res.json(statements);
+  } catch (error) {
+    res.status(500).json({ error: 'Database error' });
+  }
+});
+
+// Get single statement by ID (public)
+app.get('/api/statements/:id', (req, res) => {
+  try {
+    const { id } = req.params;
+    // Check if id is numeric or a slug
+    const isNumeric = /^\d+$/.test(id);
+    const statement = isNumeric 
+      ? db.prepare('SELECT * FROM statements WHERE id = ? AND is_active = 1').get(id)
+      : db.prepare('SELECT * FROM statements WHERE slug = ? AND is_active = 1').get(id);
+    
+    if (!statement) {
+      return res.status(404).json({ error: 'Statement not found' });
+    }
+    res.json(statement);
   } catch (error) {
     res.status(500).json({ error: 'Database error' });
   }
@@ -1083,6 +1138,79 @@ app.delete('/api/admin/partners/:id', requireAuth, (req, res) => {
   try {
     const { id } = req.params;
     db.prepare('DELETE FROM partners WHERE id = ?').run(id);
+    res.json({ success: true });
+  } catch (error) {
+    res.status(500).json({ error: 'Database error' });
+  }
+});
+
+// Admin statements endpoints
+app.get('/api/admin/statements', requireAuth, (req, res) => {
+  try {
+    const statements = db.prepare('SELECT * FROM statements ORDER BY date DESC, display_order').all();
+    res.json(statements);
+  } catch (error) {
+    res.status(500).json({ error: 'Database error' });
+  }
+});
+
+app.post('/api/admin/statements', requireAuth, (req, res) => {
+  try {
+    const data = req.body;
+    
+    const result = db.prepare(`
+      INSERT INTO statements (
+        slug, date,
+        title_en, title_fa, title_tr, title_az, title_ar, title_zh, title_es,
+        content_en, content_fa, content_tr, content_az, content_ar, content_zh, content_es,
+        display_order, is_active
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    `).run(
+      data.slug || '', data.date || new Date().toISOString().split('T')[0],
+      data.title_en || '', data.title_fa || '', data.title_tr || '', data.title_az || '', data.title_ar || '', data.title_zh || '', data.title_es || '',
+      data.content_en || '', data.content_fa || '', data.content_tr || '', data.content_az || '', data.content_ar || '', data.content_zh || '', data.content_es || '',
+      parseInt(data.display_order) || 0, data.is_active === 'false' ? 0 : 1
+    );
+    
+    res.json({ success: true, id: result.lastInsertRowid });
+  } catch (error) {
+    console.error('Statement error:', error);
+    res.status(500).json({ error: 'Database error' });
+  }
+});
+
+app.put('/api/admin/statements/:id', requireAuth, (req, res) => {
+  try {
+    const { id } = req.params;
+    const data = req.body;
+    
+    db.prepare(`
+      UPDATE statements SET
+        slug = ?, date = ?,
+        title_en = ?, title_fa = ?, title_tr = ?, title_az = ?, title_ar = ?, title_zh = ?, title_es = ?,
+        content_en = ?, content_fa = ?, content_tr = ?, content_az = ?, content_ar = ?, content_zh = ?, content_es = ?,
+        display_order = ?, is_active = ?,
+        updated_at = CURRENT_TIMESTAMP
+      WHERE id = ?
+    `).run(
+      data.slug || '', data.date || new Date().toISOString().split('T')[0],
+      data.title_en || '', data.title_fa || '', data.title_tr || '', data.title_az || '', data.title_ar || '', data.title_zh || '', data.title_es || '',
+      data.content_en || '', data.content_fa || '', data.content_tr || '', data.content_az || '', data.content_ar || '', data.content_zh || '', data.content_es || '',
+      parseInt(data.display_order) || 0, data.is_active === 'false' ? 0 : 1,
+      id
+    );
+    
+    res.json({ success: true });
+  } catch (error) {
+    console.error('Statement update error:', error);
+    res.status(500).json({ error: 'Database error' });
+  }
+});
+
+app.delete('/api/admin/statements/:id', requireAuth, (req, res) => {
+  try {
+    const { id } = req.params;
+    db.prepare('DELETE FROM statements WHERE id = ?').run(id);
     res.json({ success: true });
   } catch (error) {
     res.status(500).json({ error: 'Database error' });

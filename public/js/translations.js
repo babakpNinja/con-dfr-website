@@ -54,7 +54,8 @@ const translations = {
       subtitle: "Official statements and declarations from the Congress",
       s1: { title: "Condemnation of Islamic Regime Crimes in Iran" },
       s2: { title: "Support for Immediate Formation of Strategic Council" },
-      s3: { title: "To the Oppressed and Free People of Iran" }
+      s3: { title: "To the Oppressed and Free People of Iran" },
+      backToStatements: "Back to Statements"
     },
     mou: {
       title: "8-Article Memorandum of Understanding",
@@ -143,7 +144,8 @@ const translations = {
       subtitle: "بیانیه‌ها و اعلامیه‌های رسمی کنگره",
       s1: { title: "محکومیت جنایات رژیم اسلامی در ایران" },
       s2: { title: "حمایت از تشکیل فوری شورای راهبردی" },
-      s3: { title: "مردم ستمدیده و آزاده ایران" }
+      s3: { title: "مردم ستمدیده و آزاده ایران" },
+      backToStatements: "بازگشت به بیانیه‌ها"
     },
     mou: {
       title: "تفاهم‌نامه ۸ ماده‌ای",
@@ -232,7 +234,8 @@ const translations = {
       subtitle: "Kongrenin resmi bildiri ve açıklamaları",
       s1: { title: "İran'daki İslam Rejimi Suçlarının Kınanması" },
       s2: { title: "Stratejik Konseyin Acil Oluşturulmasına Destek" },
-      s3: { title: "İran'ın Mazlum ve Özgür Halkına" }
+      s3: { title: "İran'ın Mazlum ve Özgür Halkına" },
+      backToStatements: "Bildirilere Dön"
     },
     mou: {
       title: "8 Maddelik Mutabakat Zaptı",
@@ -321,7 +324,8 @@ const translations = {
       subtitle: "Konqresin rəsmi bəyanat və elanları",
       s1: { title: "İranda İslam Rejiminin Cinayətlərinin Qınanması" },
       s2: { title: "Strateji Şuranın Təcili Yaradılmasına Dəstək" },
-      s3: { title: "İranın Məzlum və Azad Xalqına" }
+      s3: { title: "İranın Məzlum və Azad Xalqına" },
+      backToStatements: "Bəyanatlara Qayıt"
     },
     mou: {
       title: "8 Maddəlik Anlaşma Memorandumu",
@@ -410,7 +414,8 @@ const translations = {
       subtitle: "البيانات والإعلانات الرسمية من المؤتمر",
       s1: { title: "إدانة جرائم النظام الإسلامي في إيران" },
       s2: { title: "دعم التشكيل الفوري للمجلس الاستراتيجي" },
-      s3: { title: "إلى شعب إيران المظلوم والحر" }
+      s3: { title: "إلى شعب إيران المظلوم والحر" },
+      backToStatements: "العودة إلى البيانات"
     },
     mou: {
       title: "مذكرة التفاهم المكونة من 8 مواد",
@@ -499,7 +504,8 @@ const translations = {
       subtitle: "大会的官方声明和宣言",
       s1: { title: "谴责伊朗伊斯兰政权的罪行" },
       s2: { title: "支持立即成立战略委员会" },
-      s3: { title: "致伊朗受压迫和自由的人民" }
+      s3: { title: "致伊朗受压迫和自由的人民" },
+      backToStatements: "返回声明"
     },
     mou: {
       title: "八条谅解备忘录",
@@ -588,7 +594,8 @@ const translations = {
       subtitle: "Declaraciones y pronunciamientos oficiales del Congreso",
       s1: { title: "Condena de los Crímenes del Régimen Islámico en Irán" },
       s2: { title: "Apoyo a la Formación Inmediata del Consejo Estratégico" },
-      s3: { title: "Al Pueblo Oprimido y Libre de Irán" }
+      s3: { title: "Al Pueblo Oprimido y Libre de Irán" },
+      backToStatements: "Volver a Declaraciones"
     },
     mou: {
       title: "Memorando de Entendimiento de 8 Artículos",

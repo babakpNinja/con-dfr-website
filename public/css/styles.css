@@ -653,6 +653,13 @@ a:hover {
   gap: 1rem;
   transition: all var(--transition-fast);
   cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+a.statement-item {
+  text-decoration: none;
+  color: inherit;
 }
 
 .statement-item:hover {
