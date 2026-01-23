@@ -270,7 +270,7 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="/js/i18n.js"></script>
+  <script src="/js/translations.js"></script>
   <script src="/js/main.js"></script>
   <script>
     // Get statement ID from URL
@@ -298,7 +298,8 @@
     function renderStatement() {
       if (!statementData) return;
       
-      const lang = window.currentLanguage || 'en';
+      // Get current language from localStorage or default to 'en'
+      const lang = localStorage.getItem('lang') || 'en';
       const title = statementData[`title_${lang}`] || statementData.title_en || statementData.title_fa;
       const content = statementData[`content_${lang}`] || statementData.content_en || statementData.content_fa;
       
@@ -332,7 +333,7 @@
     }
     
     // Listen for language changes
-    document.addEventListener('languageChanged', () => {
+    document.addEventListener('languageChanged', (e) => {
       renderStatement();
     });
     

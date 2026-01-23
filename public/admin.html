@@ -1576,6 +1576,12 @@
         return;
       }
       
+      // Show loading state
+      const btn = event.target;
+      const originalText = btn.textContent;
+      btn.textContent = 'Translating...';
+      btn.disabled = true;
+      
       try {
         const res = await fetch('/api/admin/translate', {
           method: 'POST',
@@ -1590,18 +1596,30 @@
             const [field, lang] = key.split('_');
             const inputId = field === 'name' ? `partner-name-${lang}` : `partner-desc-${lang}`;
             const input = document.getElementById(inputId);
-            if (input) input.value = value;
+            if (input && value) input.value = value;
           });
           
-          // Flash language tabs
+          // Flash language tabs to indicate success
           document.querySelectorAll('#partner-lang-tabs .lang-tab').forEach(tab => {
             if (tab.dataset.lang !== 'en') {
+              tab.style.animation = 'none';
+              tab.offsetHeight; // Trigger reflow
               tab.style.animation = 'flash 0.5s ease 3';
             }
           });
+          
+          btn.textContent = 'Translated!';
+          setTimeout(() => { btn.textContent = originalText; }, 2000);
+        } else {
+          alert('Translation failed: ' + (data.error || 'Unknown error'));
+          btn.textContent = originalText;
         }
       } catch (err) {
         console.error('Translation failed:', err);
+        alert('Translation failed. Please try again.');
+        btn.textContent = originalText;
+      } finally {
+        btn.disabled = false;
       }
     }
 
