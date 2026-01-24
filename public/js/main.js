@@ -12,12 +12,16 @@ const partnersGrid = document.getElementById('partners-grid');
 const mobileMenuBtn = document.getElementById('mobile-menu-btn');
 const navLinks = document.getElementById('nav-links');
 
+// Store page content from API
+let pageContent = {};
+
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
   initLanguage();
   initScrollEffects();
   initNavigation();
   initLanguageSelector();
+  loadPageContent(); // Load content from admin panel
   loadPartners();
   loadStatements();
   initPartnerTabs();
@@ -39,7 +43,9 @@ function setLanguage(lang) {
   document.documentElement.setAttribute('lang', lang);
   
   // Update current language display
-  currentLangSpan.textContent = languageNames[lang];
+  if (currentLangSpan) {
+    currentLangSpan.textContent = languageNames[lang];
+  }
   
   // Update active state in dropdown
   document.querySelectorAll('.lang-dropdown a').forEach(a => {
@@ -48,6 +54,9 @@ function setLanguage(lang) {
   
   // Translate all elements
   translatePage();
+  
+  // Update hero content from API data
+  updateHeroContent();
   
   // Reload partners and statements with new language
   loadPartners();
@@ -71,6 +80,111 @@ function translatePage() {
 
 function getNestedValue(obj, path) {
   return path.split('.').reduce((acc, part) => acc && acc[part], obj);
+}
+
+// Load page content from API (admin-defined content)
+async function loadPageContent() {
+  try {
+    const response = await fetch('/api/content');
+    if (response.ok) {
+      const contentArray = await response.json();
+      // Convert array to object keyed by section_key
+      contentArray.forEach(item => {
+        pageContent[item.section_key] = item;
+      });
+      // Update hero content with loaded data
+      updateHeroContent();
+    }
+  } catch (error) {
+    console.log('Using default content');
+  }
+}
+
+// Update hero section with content from admin panel
+function updateHeroContent() {
+  // Update hero main title
+  const heroTitle = document.getElementById('hero-title');
+  if (heroTitle && pageContent.hero_main_title) {
+    const content = pageContent.hero_main_title;
+    const title = content[`content_${currentLang}`] || content.content_en || content.content_fa;
+    if (title) {
+      heroTitle.textContent = title;
+    }
+  }
+  
+  // Update hero subtitle
+  const heroSubtitle = document.getElementById('hero-subtitle');
+  if (heroSubtitle && pageContent.hero_subtitle) {
+    const content = pageContent.hero_subtitle;
+    const subtitle = content[`content_${currentLang}`] || content.content_en || content.content_fa;
+    if (subtitle) {
+      heroSubtitle.textContent = subtitle;
+    }
+  }
+  
+  // Update about section title
+  const aboutTitle = document.querySelector('[data-section="about_title"]');
+  if (aboutTitle && pageContent.about_title) {
+    const content = pageContent.about_title;
+    const title = content[`content_${currentLang}`] || content.content_en;
+    if (title) aboutTitle.textContent = title;
+  }
+  
+  // Update about section content
+  const aboutContent = document.querySelector('[data-section="about_content"]');
+  if (aboutContent && pageContent.about_content) {
+    const content = pageContent.about_content;
+    const text = content[`content_${currentLang}`] || content.content_en;
+    if (text) aboutContent.textContent = text;
+  }
+  
+  // Update partners section title
+  const partnersTitle = document.querySelector('[data-section="partners_title"]');
+  if (partnersTitle && pageContent.partners_title) {
+    const content = pageContent.partners_title;
+    const title = content[`content_${currentLang}`] || content.content_en;
+    if (title) partnersTitle.textContent = title;
+  }
+  
+  // Update partners section subtitle
+  const partnersSubtitle = document.querySelector('[data-section="partners_subtitle"]');
+  if (partnersSubtitle && pageContent.partners_subtitle) {
+    const content = pageContent.partners_subtitle;
+    const subtitle = content[`content_${currentLang}`] || content.content_en;
+    if (subtitle) partnersSubtitle.textContent = subtitle;
+  }
+  
+  // Update membership section title
+  const membershipTitle = document.querySelector('[data-section="membership_title"]');
+  if (membershipTitle && pageContent.membership_title) {
+    const content = pageContent.membership_title;
+    const title = content[`content_${currentLang}`] || content.content_en;
+    if (title) membershipTitle.textContent = title;
+  }
+  
+  // Update membership section subtitle
+  const membershipSubtitle = document.querySelector('[data-section="membership_subtitle"]');
+  if (membershipSubtitle && pageContent.membership_subtitle) {
+    const content = pageContent.membership_subtitle;
+    const subtitle = content[`content_${currentLang}`] || content.content_en;
+    if (subtitle) membershipSubtitle.textContent = subtitle;
+  }
+  
+  // Update contact section title
+  const contactTitle = document.querySelector('[data-section="contact_title"]');
+  if (contactTitle && pageContent.contact_title) {
+    const content = pageContent.contact_title;
+    const title = content[`content_${currentLang}`] || content.content_en;
+    if (title) contactTitle.textContent = title;
+  }
+  
+  // Update contact section subtitle
+  const contactSubtitle = document.querySelector('[data-section="contact_subtitle"]');
+  if (contactSubtitle && pageContent.contact_subtitle) {
+    const content = pageContent.contact_subtitle;
+    const subtitle = content[`content_${currentLang}`] || content.content_en;
+    if (subtitle) contactSubtitle.textContent = subtitle;
+  }
 }
 
 function initLanguageSelector() {
