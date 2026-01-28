@@ -4,6 +4,7 @@ const translations = {
     nav: {
       home: "Home",
       about: "About",
+      ethnicGroups: "Ethnic Groups",
       partners: "Partners",
       statements: "Statements",
       mou: "MOU",
@@ -85,6 +86,39 @@ const translations = {
       admin: "Admin Panel",
       rights: "All rights reserved."
     },
+    ethnicGroups: {
+      title: "Iran's Ethnic Diversity",
+      subtitle: "Celebrating the rich tapestry of cultures, languages, and traditions that make up Iran",
+      unityTitle: "United in Diversity",
+      unitySubtitle: "All ethnic groups of Iran marching together towards freedom"
+    },
+    aboutPage: {
+      heroTitle: "About Us",
+      heroSubtitle: "Building a democratic, federal, and secular future for Iran",
+      backToHome: "Back to Home",
+      introTitle: "Introduction",
+      introText1: "The Congress of Democratic & Federalist Republicans is a collection of political and civil parties, groups, and activists that emerged from the experience of struggle in forming the broadest Republican coalition in the fight against the Islamic Republic regime.",
+      introText2: "This struggle has made possible the proximity and united action of two Republican factions: the Democratic-Republicans (opponents of federalism) and the Federal Democrats (supporters of federalism).",
+      introText3: "This very valuable theoretical experience or democratic model for the unity of action among Republicans, arising from the long years of dialogue and bargaining by supporters of these two intellectual tendencies or two political wings within the Republican movement.",
+      objectivesTitle: "Objectives",
+      objectivesIntro: "The ultimate goal of the Congress is to join with other coalitions, parties, organizations, and Republican political and civil activists to establish a strategic council (temporary parliament) to manage the transition period and the non-violent transition from the stage of overthrowing the Islamic Republic regime to the establishment of the Constituent Assembly. To achieve this ultimate goal, a two-stage strategy for the Congress is necessary.",
+      stage1Title: "Stage One",
+      stage1Text: "Initiating bilateral or multilateral talks with coalitions, parties, organizations, and political and civil activists to create convergence, coordination, and create a joint program for the transition period.",
+      stage2Title: "Stage Two",
+      stage2Text: "Creating an appropriate platform based on recognized democratic criteria for establishing a strategic council (temporary parliament) to manage the transition period in coordination with all Republican political forces and according to previous planning.",
+      cooperationTitle: "Why is it necessary for all Republican factions to cooperate?",
+      cooperationText1: "Over the past decades, due to insufficient experience and lack of recognition of Republican tendencies, it has not been possible for the Republican opposition to form a broad political coalition and assert itself in the Iranian political scene. During this period, Republican movements operated like different islands, far from each other, and for this simple reason they could not become a capable and recognized alternative in Iranian society.",
+      cooperationText2: "Now, after years of experience, the Joint Congress, in an analysis of the actual situation, has reached a new model for creating a broader political coalition among Republicans. This new model is the acceptance of actually existing movements and the recognition of intellectual tendencies and political factions among Republicans, which will be able to bring all Republican tendencies together around a dynamic program and become one of the factors of political change (political alternative) in Iran.",
+      quoteTitle: "«Our strength lies in accepting plurality in Iran.»",
+      quoteText: "Iran, like any country, is diverse and pluralistic in every way. The reality is that each part of this plurality injects a specific energy into society and seeks a response to its demands in return. Pluralism in Iran actually demands pluralistic participation. Therefore, eliminating and denying part of this plurality is actually denying society's participation with part of it. This means ignoring justice, ignoring human needs, and ultimately weakening society. Continuing this approach will ultimately lead to polarization in society and will impose social decline on the country. Therefore, paying attention to pluralism means increasing empowerment in society.",
+      pluralismTitle: "Pluralistic Democracy",
+      pluralismText1: "Iran's political society is also very pluralistic. Without accepting this plurality, empowerment in the political arena will also be impossible. Pluralistic democracy is precisely the way and method to respond to the pluralistic need in Iran. Without a pluralistic democracy, achieving the hopes and aspirations of the people will also be impossible.",
+      pluralismText2: "The ethnic diversity (Baloch, Turk, Kurd, Persian, Arab, Turkmen, Gilak, Mazandarani, etc.) in Iran is not a threat but a golden opportunity for the progress and development of Iran and a great opportunity for this country to become the capital of the Middle East in the event of democratization in the countries of the Middle East.",
+      pluralismText3: "May Iran also see that day.",
+      joinCTA: "Join the Congress",
+      readMore: "Read More",
+      learnMore: "Learn More About Us"
+    },
     common: {
       loading: "Loading..."
     }
@@ -94,6 +128,7 @@ const translations = {
     nav: {
       home: "خانه",
       about: "درباره ما",
+      ethnicGroups: "اقوام ایرانی",
       partners: "اعضا",
       statements: "بیانیه‌ها",
       mou: "تفاهم‌نامه",
@@ -175,6 +210,39 @@ const translations = {
       admin: "پنل مدیریت",
       rights: "تمامی حقوق محفوظ است."
     },
+    ethnicGroups: {
+      title: "تنوع قومی ایران",
+      subtitle: "گرامیداشت فرهنگ‌ها، زبان‌ها و سنت‌های غنی که ایران را می‌سازند",
+      unityTitle: "متحد در تنوع",
+      unitySubtitle: "همه اقوام ایران دست در دست به سوی آزادی"
+    },
+    aboutPage: {
+      heroTitle: "درباره ما",
+      heroSubtitle: "ساختن آینده‌ای دموکراتیک، فدرال و سکولار برای ایران",
+      backToHome: "بازگشت به خانه",
+      introTitle: "مقدمه",
+      introText1: "کنگره مشترک جمهوری خواهان دموکرات و فدرال دموکرات مجموعه‌ای از احزاب، گروه‌ها و فعالان سیاسی و مدنی است که از تجربه مبارزه در تشکیل گسترده‌ترین ائتلاف جمهوری‌خواهی در مبارزه با رژیم جمهوری اسلامی پدید آمده است.",
+      introText2: "این مبارزه نزدیکی و اقدام متحد دو جناح جمهوری‌خواه را ممکن ساخته است: جمهوری‌خواهان دموکرات (مخالفان فدرالیسم) و فدرال دموکرات‌ها (حامیان فدرالیسم).",
+      introText3: "این تجربه نظری بسیار ارزشمند یا الگوی دموکراتیک برای وحدت عمل میان جمهوری‌خواهان، ناشی از سال‌های طولانی گفتگو و چانه‌زنی توسط حامیان این دو گرایش فکری یا دو بال سیاسی در جنبش جمهوری‌خواهی است.",
+      objectivesTitle: "اهداف",
+      objectivesIntro: "هدف نهایی کنگره پیوستن به سایر ائتلاف‌ها، احزاب، سازمان‌ها و فعالان سیاسی و مدنی جمهوری‌خواه برای تشکیل شورای راهبردی (پارلمان موقت) برای مدیریت دوره گذار و انتقال غیرخشونت‌آمیز از مرحله سرنگونی رژیم جمهوری اسلامی به تشکیل مجلس مؤسسان است. برای دستیابی به این هدف نهایی، یک استراتژی دو مرحله‌ای برای کنگره ضروری است.",
+      stage1Title: "مرحله اول",
+      stage1Text: "آغاز مذاکرات دوجانبه یا چندجانبه با ائتلاف‌ها، احزاب، سازمان‌ها و فعالان سیاسی و مدنی برای ایجاد همگرایی، هماهنگی و تدوین برنامه مشترک برای دوره گذار.",
+      stage2Title: "مرحله دوم",
+      stage2Text: "ایجاد بستر مناسب بر اساس معیارهای دموکراتیک شناخته شده برای تشکیل شورای راهبردی (پارلمان موقت) برای مدیریت دوره گذار در هماهنگی با تمام نیروهای سیاسی جمهوری‌خواه و طبق برنامه‌ریزی قبلی.",
+      cooperationTitle: "چرا همکاری همه جناح‌های جمهوری‌خواه ضروری است؟",
+      cooperationText1: "در طول دهه‌های گذشته، به دلیل تجربه ناکافی و عدم شناخت گرایش‌های جمهوری‌خواهی، امکان تشکیل یک ائتلاف سیاسی گسترده توسط اپوزیسیون جمهوری‌خواه و اثبات خود در صحنه سیاسی ایران فراهم نشده است. در این دوره، جنبش‌های جمهوری‌خواه مانند جزایر مختلف، دور از یکدیگر عمل می‌کردند و به همین دلیل ساده نتوانستند به یک آلترناتیو توانمند و شناخته شده در جامعه ایران تبدیل شوند.",
+      cooperationText2: "اکنون، پس از سال‌ها تجربه، کنگره مشترک در تحلیل وضعیت واقعی، به یک الگوی جدید برای ایجاد ائتلاف سیاسی گسترده‌تر میان جمهوری‌خواهان دست یافته است. این الگوی جدید پذیرش جنبش‌های موجود واقعی و شناخت گرایش‌های فکری و جناح‌های سیاسی میان جمهوری‌خواهان است که قادر خواهد بود همه گرایش‌های جمهوری‌خواه را حول یک برنامه پویا گرد هم آورد و به یکی از عوامل تغییر سیاسی (آلترناتیو سیاسی) در ایران تبدیل شود.",
+      quoteTitle: "«قدرت ما در پذیرش تکثر در ایران نهفته است.»",
+      quoteText: "ایران مانند هر کشوری از هر نظر متنوع و کثرت‌گرا است. واقعیت این است که هر بخش از این کثرت انرژی خاصی را به جامعه تزریق می‌کند و در مقابل به دنبال پاسخ به خواسته‌های خود است. کثرت‌گرایی در ایران در واقع مشارکت کثرت‌گرایانه را می‌طلبد. بنابراین، حذف و انکار بخشی از این کثرت در واقع انکار مشارکت جامعه با بخشی از آن است. این به معنای نادیده گرفتن عدالت، نادیده گرفتن نیازهای انسانی و در نهایت تضعیف جامعه است.",
+      pluralismTitle: "دموکراسی کثرت‌گرا",
+      pluralismText1: "جامعه سیاسی ایران نیز بسیار کثرت‌گرا است. بدون پذیرش این کثرت، توانمندسازی در عرصه سیاسی نیز غیرممکن خواهد بود. دموکراسی کثرت‌گرا دقیقاً راه و روش پاسخگویی به نیاز کثرت‌گرایانه در ایران است. بدون دموکراسی کثرت‌گرا، دستیابی به امیدها و آرزوهای مردم نیز غیرممکن خواهد بود.",
+      pluralismText2: "تنوع قومی (بلوچ، ترک، کرد، فارس، عرب، ترکمن، گیلک، مازندرانی و غیره) در ایران نه یک تهدید بلکه یک فرصت طلایی برای پیشرفت و توسعه ایران و فرصتی بزرگ برای این کشور است تا در صورت دموکراتیزه شدن کشورهای خاورمیانه به پایتخت خاورمیانه تبدیل شود.",
+      pluralismText3: "ایران نیز آن روز را ببیند.",
+      joinCTA: "به کنگره بپیوندید",
+      readMore: "بیشتر بخوانید",
+      learnMore: "درباره ما بیشتر بدانید"
+    },
     common: {
       loading: "در حال بارگذاری..."
     }
@@ -184,6 +252,7 @@ const translations = {
     nav: {
       home: "Ana Sayfa",
       about: "Hakkımızda",
+      ethnicGroups: "Etnik Gruplar",
       partners: "Ortaklar",
       statements: "Bildiriler",
       mou: "Mutabakat",
@@ -265,6 +334,39 @@ const translations = {
       admin: "Yönetici Paneli",
       rights: "Tüm hakları saklıdır."
     },
+    ethnicGroups: {
+      title: "İran'ın Etnik Çeşitliliği",
+      subtitle: "İran'ı oluşturan zengin kültürler, diller ve gelenekleri kutluyoruz",
+      unityTitle: "Çeşitlilikte Birlik",
+      unitySubtitle: "İran'ın tüm etnik grupları özgürlüğe doğru birlikte yürüyor"
+    },
+    aboutPage: {
+      heroTitle: "Hakkımızda",
+      heroSubtitle: "İran için demokratik, federal ve laik bir gelecek inşa ediyoruz",
+      backToHome: "Ana Sayfaya Dön",
+      introTitle: "Giriş",
+      introText1: "Demokrat ve Federalist Cumhuriyetçiler Kongresi, İslam Cumhuriyeti rejimine karşı mücadelede en geniş Cumhuriyetçi koalisyonu oluşturma deneyiminden doğan siyasi ve sivil partiler, gruplar ve aktivistlerin bir araya geldiği bir oluşumdur.",
+      introText2: "Bu mücadele, iki Cumhuriyetçi kesimin yakınlaşmasını ve birlikte hareket etmesini mümkün kılmıştır: Demokrat-Cumhuriyetçiler (federalizm karşıtları) ve Federal Demokratlar (federalizm destekçileri).",
+      introText3: "Cumhuriyetçiler arasında eylem birliği için bu çok değerli teorik deneyim veya demokratik model, bu iki düşünce eğiliminin veya Cumhuriyetçi hareket içindeki iki siyasi kanadın destekçilerinin uzun yıllar süren diyalog ve pazarlıklarından doğmuştur.",
+      objectivesTitle: "Hedefler",
+      objectivesIntro: "Kongrenin nihai hedefi, geçiş dönemini yönetmek ve İslam Cumhuriyeti rejiminin devrilmesinden Kurucu Meclis'in kurulmasına kadar şiddetsiz geçişi sağlamak için stratejik bir konsey (geçici parlamento) oluşturmak üzere diğer koalisyonlar, partiler, örgütler ve Cumhuriyetçi siyasi ve sivil aktivistlerle birleşmektir. Bu nihai hedefe ulaşmak için Kongre'nin iki aşamalı bir stratejisi gereklidir.",
+      stage1Title: "Birinci Aşama",
+      stage1Text: "Yakınlaşma, koordinasyon sağlamak ve geçiş dönemi için ortak bir program oluşturmak amacıyla koalisyonlar, partiler, örgütler ve siyasi ve sivil aktivistlerle ikili veya çok taraflı görüşmeler başlatmak.",
+      stage2Title: "İkinci Aşama",
+      stage2Text: "Tüm Cumhuriyetçi siyasi güçlerle koordineli olarak ve önceki planlamaya göre geçiş dönemini yönetmek için stratejik bir konsey (geçici parlamento) kurmak amacıyla tanınmış demokratik kriterlere dayalı uygun bir platform oluşturmak.",
+      cooperationTitle: "Tüm Cumhuriyetçi kesimlerin işbirliği yapması neden gerekli?",
+      cooperationText1: "Son on yıllarda, yetersiz deneyim ve Cumhuriyetçi eğilimlerin tanınmaması nedeniyle, Cumhuriyetçi muhalefetin geniş bir siyasi koalisyon oluşturması ve İran siyasi sahnesinde kendini kabul ettirmesi mümkün olmamıştır. Bu dönemde, Cumhuriyetçi hareketler birbirinden uzak farklı adalar gibi hareket etmiş ve bu basit nedenle İran toplumunda yetenekli ve tanınmış bir alternatif haline gelememişlerdir.",
+      cooperationText2: "Şimdi, yılların deneyiminden sonra, Ortak Kongre, mevcut durumun analizinde, Cumhuriyetçiler arasında daha geniş bir siyasi koalisyon oluşturmak için yeni bir modele ulaşmıştır. Bu yeni model, gerçekte var olan hareketlerin kabulü ve Cumhuriyetçiler arasındaki düşünce eğilimlerinin ve siyasi kesimlerin tanınmasıdır; bu, tüm Cumhuriyetçi eğilimleri dinamik bir program etrafında bir araya getirebilecek ve İran'da siyasi değişimin (siyasi alternatif) faktörlerinden biri haline gelebilecektir.",
+      quoteTitle: "«Gücümüz İran'daki çoğulculuğu kabul etmekte yatıyor.»",
+      quoteText: "İran, her ülke gibi, her açıdan çeşitli ve çoğulcudur. Gerçek şu ki, bu çoğulculuğun her parçası topluma belirli bir enerji enjekte eder ve karşılığında taleplerinin yanıtını arar. İran'daki çoğulculuk aslında çoğulcu katılımı talep eder. Bu nedenle, bu çoğulculuğun bir kısmını ortadan kaldırmak ve reddetmek, aslında toplumun bir kısmıyla katılımını reddetmektir. Bu, adaleti görmezden gelmek, insan ihtiyaçlarını görmezden gelmek ve nihayetinde toplumu zayıflatmak anlamına gelir.",
+      pluralismTitle: "Çoğulcu Demokrasi",
+      pluralismText1: "İran'ın siyasi toplumu da çok çoğulcudur. Bu çoğulculuğu kabul etmeden, siyasi arenada güçlenme de imkansız olacaktır. Çoğulcu demokrasi, İran'daki çoğulcu ihtiyaca yanıt vermenin tam olarak yolu ve yöntemidir. Çoğulcu bir demokrasi olmadan, halkın umutlarına ve özlemlerine ulaşmak da imkansız olacaktır.",
+      pluralismText2: "İran'daki etnik çeşitlilik (Beluç, Türk, Kürt, Fars, Arap, Türkmen, Gilak, Mazenderani vb.) bir tehdit değil, İran'ın ilerlemesi ve gelişmesi için altın bir fırsat ve Orta Doğu ülkelerinde demokratikleşme durumunda bu ülkenin Orta Doğu'nun başkenti olması için büyük bir fırsattır.",
+      pluralismText3: "İran da o günü görsün.",
+      joinCTA: "Kongreye Katıl",
+      readMore: "Devamını Oku",
+      learnMore: "Hakkımızda Daha Fazla Bilgi"
+    },
     common: {
       loading: "Yükleniyor..."
     }
@@ -274,6 +376,7 @@ const translations = {
     nav: {
       home: "Ana Səhifə",
       about: "Haqqımızda",
+      ethnicGroups: "Etnik Qruplar",
       partners: "Tərəfdaşlar",
       statements: "Bəyanatlar",
       mou: "Anlaşma",
@@ -355,6 +458,39 @@ const translations = {
       admin: "Admin Paneli",
       rights: "Bütün hüquqlar qorunur."
     },
+    ethnicGroups: {
+      title: "İranın Etnik Müxtəlifliyi",
+      subtitle: "İranı təşkil edən zəngin mədəniyyətləri, dilləri və ənənələri qeyd edirik",
+      unityTitle: "Müxtəliflikdə Birlik",
+      unitySubtitle: "İranın bütün etnik qrupları azadlığa doğru birlikdə irəliləyir"
+    },
+    aboutPage: {
+      heroTitle: "Haqqımızda",
+      heroSubtitle: "İran üçün demokratik, federal və dünyəvi gələcək qururuq",
+      backToHome: "Ana Səhifəyə Qayıt",
+      introTitle: "Giriş",
+      introText1: "Demokrat və Federalist Respublikaçılar Konqresi, İslam Respublikası rejiminə qarşı mübarizədə ən geniş Respublikaçı koalisiyanı formalaşdırma təcrübəsindən yaranan siyasi və vətəndaş partiyaları, qrupları və fəalların toplusudur.",
+      introText2: "Bu mübarizə iki Respublikaçı qrupun yaxınlaşmasını və birlikdə hərəkət etməsini mümkün etmişdir: Demokrat-Respublikaçılar (federalizm əleyhdarları) və Federal Demokratlar (federalizm tərəfdarları).",
+      introText3: "Respublikaçılar arasında fəaliyyət birliyi üçün bu çox dəyərli nəzəri təcrübə və ya demokratik model, bu iki fikir meylinin və ya Respublikaçı hərəkat daxilindəki iki siyasi qanadın tərəfdarlarının uzun illər davam edən dialoq və danışıqlarından yaranmışdır.",
+      objectivesTitle: "Məqsədlər",
+      objectivesIntro: "Konqresin son məqsədi keçid dövrünü idarə etmək və İslam Respublikası rejiminin devrilməsindən Təsis Məclisinə qədər zorakılıqsız keçidi təmin etmək üçün strateji şura (müvəqqəti parlament) yaratmaq məqsədilə digər koalisiyalar, partiyalar, təşkilatlar və Respublikaçı siyasi və vətəndaş fəallarla birləşməkdir. Bu son məqsədə çatmaq üçün Konqresin iki mərhələli strategiyası lazımdır.",
+      stage1Title: "Birinci Mərhələ",
+      stage1Text: "Yaxınlaşma, koordinasiya yaratmaq və keçid dövrü üçün ortaq proqram hazırlamaq məqsədilə koalisiyalar, partiyalar, təşkilatlar və siyasi və vətəndaş fəallarla ikitərəfli və ya çoxtərəfli danışıqlar başlatmaq.",
+      stage2Title: "İkinci Mərhələ",
+      stage2Text: "Bütün Respublikaçı siyasi qüvvələrlə koordinasiyalı şəkildə və əvvəlki planlaşdırmaya uyğun olaraq keçid dövrünü idarə etmək üçün strateji şura (müvəqqəti parlament) yaratmaq məqsədilə tanınmış demokratik meyarlara əsaslanan müvafiq platforma yaratmaq.",
+      cooperationTitle: "Bütün Respublikaçı qrupların əməkdaşlığı niyə lazımdır?",
+      cooperationText1: "Son onilliklərdə kifayət qədər təcrübə olmaması və Respublikaçı meyllərin tanınmaması səbəbindən Respublikaçı müxalifətin geniş siyasi koalisiya qurması və İran siyasi səhnəsində özünü təsdiq etməsi mümkün olmamışdır. Bu dövrdə Respublikaçı hərəkatlar bir-birindən uzaq müxtəlif adalar kimi fəaliyyət göstərmiş və bu sadə səbəbdən İran cəmiyyətində bacarıqlı və tanınmış alternativ ola bilməmişlər.",
+      cooperationText2: "İndi, illərin təcrübəsindən sonra, Birgə Konqres, real vəziyyətin təhlilində, Respublikaçılar arasında daha geniş siyasi koalisiya yaratmaq üçün yeni bir modelə nail olmuşdur. Bu yeni model, faktiki mövcud hərəkatların qəbulu və Respublikaçılar arasındakı fikir meyllərinin və siyasi qrupların tanınmasıdır ki, bu da bütün Respublikaçı meylləri dinamik proqram ətrafında birləşdirə biləcək və İranda siyasi dəyişikliyin (siyasi alternativ) amillərindən birinə çevrilə biləcəkdir.",
+      quoteTitle: "«Gücümüz İrandakı çoxluğu qəbul etməkdədir.»",
+      quoteText: "İran, hər ölkə kimi, hər cəhətdən müxtəlif və çoxluqçudur. Reallıq budur ki, bu çoxluğun hər hissəsi cəmiyyətə müəyyən enerji verir və qarşılığında tələblərinin cavabını axtarır. İrandakı çoxluqçuluq əslində çoxluqçu iştirakı tələb edir. Buna görə də, bu çoxluğun bir hissəsini aradan qaldırmaq və inkar etmək, əslində cəmiyyətin bir hissəsi ilə iştirakını inkar etməkdir. Bu, ədaləti görməməzlikdən gəlmək, insan ehtiyaclarını görməməzlikdən gəlmək və nəticədə cəmiyyəti zəiflətmək deməkdir.",
+      pluralismTitle: "Çoxluqçu Demokratiya",
+      pluralismText1: "İranın siyasi cəmiyyəti də çox çoxluqçudur. Bu çoxluğu qəbul etmədən, siyasi arenada güclənmə də mümkün olmayacaq. Çoxluqçu demokratiya, İrandakı çoxluqçu ehtiyaca cavab verməyin tam yolu və metodudur. Çoxluqçu demokratiya olmadan, xalqın ümidlərinə və arzularına çatmaq da mümkün olmayacaq.",
+      pluralismText2: "İrandakı etnik müxtəliflik (Bəluç, Türk, Kürd, Fars, Ərəb, Türkmən, Gilak, Mazandarani və s.) təhlükə deyil, İranın tərəqqisi və inkişafı üçün qızıl fürsət və Yaxın Şərq ölkələrində demokratikləşmə halında bu ölkənin Yaxın Şərqin paytaxtı olması üçün böyük fürsətdir.",
+      pluralismText3: "İran da o günü görsün.",
+      joinCTA: "Konqresə Qoşul",
+      readMore: "Daha Çox Oxu",
+      learnMore: "Haqqımızda Daha Çox Məlumat"
+    },
     common: {
       loading: "Yüklənir..."
     }
@@ -364,6 +500,7 @@ const translations = {
     nav: {
       home: "الرئيسية",
       about: "من نحن",
+      ethnicGroups: "المجموعات العرقية",
       partners: "الشركاء",
       statements: "البيانات",
       mou: "مذكرة التفاهم",
@@ -445,6 +582,39 @@ const translations = {
       admin: "لوحة الإدارة",
       rights: "جميع الحقوق محفوظة."
     },
+    ethnicGroups: {
+      title: "التنوع العرقي في إيران",
+      subtitle: "الاحتفاء بالثقافات واللغات والتقاليد الغنية التي تشكل إيران",
+      unityTitle: "متحدون في التنوع",
+      unitySubtitle: "جميع الأعراق الإيرانية تسير معاً نحو الحرية"
+    },
+    aboutPage: {
+      heroTitle: "من نحن",
+      heroSubtitle: "بناء مستقبل ديمقراطي وفيدرالي وعلماني لإيران",
+      backToHome: "العودة إلى الرئيسية",
+      introTitle: "مقدمة",
+      introText1: "مؤتمر الجمهوريين الديمقراطيين والفيدراليين هو مجموعة من الأحزاب والمجموعات والناشطين السياسيين والمدنيين التي نشأت من تجربة النضال في تشكيل أوسع تحالف جمهوري في الكفاح ضد نظام الجمهورية الإسلامية.",
+      introText2: "هذا النضال جعل من الممكن التقارب والعمل الموحد بين فصيلين جمهوريين: الديمقراطيون-الجمهوريون (معارضو الفيدرالية) والديمقراطيون الفيدراليون (مؤيدو الفيدرالية).",
+      introText3: "هذه التجربة النظرية القيمة جداً أو النموذج الديمقراطي لوحدة العمل بين الجمهوريين، نشأت من سنوات طويلة من الحوار والمفاوضات من قبل مؤيدي هذين الاتجاهين الفكريين أو الجناحين السياسيين داخل الحركة الجمهورية.",
+      objectivesTitle: "الأهداف",
+      objectivesIntro: "الهدف النهائي للمؤتمر هو الانضمام إلى التحالفات والأحزاب والمنظمات والناشطين السياسيين والمدنيين الجمهوريين الآخرين لإنشاء مجلس استراتيجي (برلمان مؤقت) لإدارة الفترة الانتقالية والانتقال السلمي من مرحلة إسقاط نظام الجمهورية الإسلامية إلى إنشاء الجمعية التأسيسية. لتحقيق هذا الهدف النهائي، تحتاج استراتيجية المؤتمر إلى مرحلتين.",
+      stage1Title: "المرحلة الأولى",
+      stage1Text: "بدء محادثات ثنائية أو متعددة الأطراف مع التحالفات والأحزاب والمنظمات والناشطين السياسيين والمدنيين لخلق التقارب والتنسيق وإنشاء برنامج مشترك للفترة الانتقالية.",
+      stage2Title: "المرحلة الثانية",
+      stage2Text: "إنشاء منصة مناسبة بناءً على معايير ديمقراطية معترف بها لإنشاء مجلس استراتيجي (برلمان مؤقت) لإدارة الفترة الانتقالية بالتنسيق مع جميع القوى السياسية الجمهورية ووفقاً للتخطيط السابق.",
+      cooperationTitle: "لماذا من الضروري أن تتعاون جميع الفصائل الجمهورية؟",
+      cooperationText1: "على مدى العقود الماضية، بسبب عدم كفاية الخبرة وعدم الاعتراف بالاتجاهات الجمهورية، لم يكن من الممكن للمعارضة الجمهورية تشكيل تحالف سياسي واسع وإثبات نفسها في الساحة السياسية الإيرانية. خلال هذه الفترة، عملت الحركات الجمهورية مثل جزر مختلفة، بعيدة عن بعضها البعض، ولهذا السبب البسيط لم تتمكن من أن تصبح بديلاً قادراً ومعترفاً به في المجتمع الإيراني.",
+      cooperationText2: "الآن، بعد سنوات من الخبرة، توصل المؤتمر المشترك، في تحليل للوضع الفعلي، إلى نموذج جديد لإنشاء تحالف سياسي أوسع بين الجمهوريين. هذا النموذج الجديد هو قبول الحركات الموجودة فعلياً والاعتراف بالاتجاهات الفكرية والفصائل السياسية بين الجمهوريين، والذي سيكون قادراً على جمع جميع الاتجاهات الجمهورية حول برنامج ديناميكي وأن يصبح أحد عوامل التغيير السياسي (البديل السياسي) في إيران.",
+      quoteTitle: "«قوتنا تكمن في قبول التعددية في إيران.»",
+      quoteText: "إيران، مثل أي بلد، متنوعة وتعددية من كل النواحي. الحقيقة هي أن كل جزء من هذه التعددية يضخ طاقة محددة في المجتمع ويسعى للحصول على استجابة لمطالبه في المقابل. التعددية في إيران تتطلب في الواقع مشاركة تعددية. لذلك، فإن إزالة وإنكار جزء من هذه التعددية هو في الواقع إنكار مشاركة المجتمع مع جزء منه. هذا يعني تجاهل العدالة، وتجاهل الاحتياجات الإنسانية، وفي النهاية إضعاف المجتمع.",
+      pluralismTitle: "الديمقراطية التعددية",
+      pluralismText1: "المجتمع السياسي الإيراني أيضاً تعددي جداً. بدون قبول هذه التعددية، سيكون التمكين في الساحة السياسية مستحيلاً أيضاً. الديمقراطية التعددية هي بالضبط الطريقة والمنهج للاستجابة للحاجة التعددية في إيران. بدون ديمقراطية تعددية، سيكون تحقيق آمال وتطلعات الشعب مستحيلاً أيضاً.",
+      pluralismText2: "التنوع العرقي (البلوش، الترك، الكرد، الفرس، العرب، التركمان، الجيلاك، المازندراني، إلخ) في إيران ليس تهديداً بل فرصة ذهبية لتقدم وتطور إيران وفرصة عظيمة لهذا البلد ليصبح عاصمة الشرق الأوسط في حالة الديمقراطية في دول الشرق الأوسط.",
+      pluralismText3: "عسى أن ترى إيران ذلك اليوم.",
+      joinCTA: "انضم إلى المؤتمر",
+      readMore: "اقرأ المزيد",
+      learnMore: "تعرف علينا أكثر"
+    },
     common: {
       loading: "جاري التحميل..."
     }
@@ -454,6 +624,7 @@ const translations = {
     nav: {
       home: "首页",
       about: "关于我们",
+      ethnicGroups: "民族群体",
       partners: "合作伙伴",
       statements: "声明",
       mou: "谅解备忘录",
@@ -535,6 +706,39 @@ const translations = {
       admin: "管理面板",
       rights: "版权所有。"
     },
+    ethnicGroups: {
+      title: "伊朗的民族多样性",
+      subtitle: "庆祝构成伊朗的丰富文化、语言和传统",
+      unityTitle: "多元一体",
+      unitySubtitle: "伊朗各民族携手共进，迈向自由"
+    },
+    aboutPage: {
+      heroTitle: "关于我们",
+      heroSubtitle: "为伊朗建设民主、联邦和世俗的未来",
+      backToHome: "返回首页",
+      introTitle: "简介",
+      introText1: "民主与联邦共和党人大会是由政治和公民政党、团体和活动人士组成的集合，源于在反对伊斯兰共和国政权的斗争中形成最广泛共和联盟的经验。",
+      introText2: "这场斗争使两个共和派系的接近和联合行动成为可能：民主共和党人（反对联邦制）和联邦民主党人（支持联邦制）。",
+      introText3: "这一非常宝贵的理论经验或共和党人之间行动统一的民主模式，源于这两种思想倾向或共和运动内两个政治派系的支持者多年的对话和谈判。",
+      objectivesTitle: "目标",
+      objectivesIntro: "大会的最终目标是与其他联盟、政党、组织和共和党政治和公民活动人士联合，建立一个战略委员会（临时议会），以管理过渡时期，实现从推翻伊斯兰共和国政权到建立制宪会议的非暴力过渡。为实现这一最终目标，大会需要两阶段战略。",
+      stage1Title: "第一阶段",
+      stage1Text: "与联盟、政党、组织和政治及公民活动人士启动双边或多边会谈，以创造趋同、协调，并为过渡时期制定联合计划。",
+      stage2Title: "第二阶段",
+      stage2Text: "根据公认的民主标准创建适当的平台，以建立战略委员会（临时议会），与所有共和党政治力量协调，按照先前的规划管理过渡时期。",
+      cooperationTitle: "为什么所有共和派系都需要合作？",
+      cooperationText1: "在过去几十年中，由于经验不足和对共和倾向的认识不足，共和反对派无法形成广泛的政治联盟并在伊朗政治舞台上确立自己的地位。在此期间，共和运动像不同的岛屿一样运作，彼此相距甚远，正是由于这个简单的原因，它们无法成为伊朗社会中有能力和被认可的替代方案。",
+      cooperationText2: "现在，经过多年的经验，联合大会在对实际情况的分析中，已经达成了一个新的模式，以在共和党人之间建立更广泛的政治联盟。这个新模式是接受实际存在的运动，承认共和党人之间的思想倾向和政治派系，这将能够将所有共和倾向团结在一个动态计划周围，成为伊朗政治变革（政治替代方案）的因素之一。",
+      quoteTitle: "«我们的力量在于接受伊朗的多元性。»",
+      quoteText: "伊朗像任何国家一样，在各方面都是多样化和多元的。现实是，这种多元性的每一部分都向社会注入特定的能量，并寻求对其需求的回应。伊朗的多元主义实际上要求多元参与。因此，消除和否认这种多元性的一部分实际上是否认社会与其一部分的参与。这意味着忽视正义，忽视人类需求，最终削弱社会。",
+      pluralismTitle: "多元民主",
+      pluralismText1: "伊朗的政治社会也非常多元。不接受这种多元性，政治领域的赋权也将是不可能的。多元民主正是回应伊朗多元需求的方式和方法。没有多元民主，实现人民的希望和愿望也将是不可能的。",
+      pluralismText2: "伊朗的民族多样性（俾路支人、土耳其人、库尔德人、波斯人、阿拉伯人、土库曼人、吉兰人、马赞德兰人等）不是威胁，而是伊朗进步和发展的黄金机会，也是这个国家在中东国家民主化的情况下成为中东首都的绝佳机会。",
+      pluralismText3: "愿伊朗也能看到那一天。",
+      joinCTA: "加入大会",
+      readMore: "阅读更多",
+      learnMore: "了解更多关于我们"
+    },
     common: {
       loading: "加载中..."
     }
@@ -544,6 +748,7 @@ const translations = {
     nav: {
       home: "Inicio",
       about: "Acerca de",
+      ethnicGroups: "Grupos Étnicos",
       partners: "Socios",
       statements: "Declaraciones",
       mou: "Memorando",
@@ -624,6 +829,39 @@ const translations = {
       connect: "Conectar",
       admin: "Panel de Admin",
       rights: "Todos los derechos reservados."
+    },
+    ethnicGroups: {
+      title: "Diversidad Étnica de Irán",
+      subtitle: "Celebrando las ricas culturas, idiomas y tradiciones que conforman Irán",
+      unityTitle: "Unidos en la Diversidad",
+      unitySubtitle: "Todos los grupos étnicos de Irán marchando juntos hacia la libertad"
+    },
+    aboutPage: {
+      heroTitle: "Sobre Nosotros",
+      heroSubtitle: "Construyendo un futuro democrático, federal y secular para Irán",
+      backToHome: "Volver al Inicio",
+      introTitle: "Introducción",
+      introText1: "El Congreso de Republicanos Democráticos y Federalistas es una colección de partidos políticos y civiles, grupos y activistas que surgieron de la experiencia de lucha en la formación de la coalición republicana más amplia en la lucha contra el régimen de la República Islámica.",
+      introText2: "Esta lucha ha hecho posible la proximidad y la acción unida de dos facciones republicanas: los Demócratas-Republicanos (opositores al federalismo) y los Demócratas Federales (partidarios del federalismo).",
+      introText3: "Esta experiencia teórica muy valiosa o modelo democrático para la unidad de acción entre los republicanos, surge de los largos años de diálogo y negociación por parte de los partidarios de estas dos tendencias intelectuales o dos alas políticas dentro del movimiento republicano.",
+      objectivesTitle: "Objetivos",
+      objectivesIntro: "El objetivo final del Congreso es unirse con otras coaliciones, partidos, organizaciones y activistas políticos y civiles republicanos para establecer un consejo estratégico (parlamento temporal) para gestionar el período de transición y la transición no violenta desde la etapa de derrocamiento del régimen de la República Islámica hasta el establecimiento de la Asamblea Constituyente. Para lograr este objetivo final, es necesaria una estrategia de dos etapas para el Congreso.",
+      stage1Title: "Primera Etapa",
+      stage1Text: "Iniciar conversaciones bilaterales o multilaterales con coaliciones, partidos, organizaciones y activistas políticos y civiles para crear convergencia, coordinación y crear un programa conjunto para el período de transición.",
+      stage2Title: "Segunda Etapa",
+      stage2Text: "Crear una plataforma apropiada basada en criterios democráticos reconocidos para establecer un consejo estratégico (parlamento temporal) para gestionar el período de transición en coordinación con todas las fuerzas políticas republicanas y según la planificación previa.",
+      cooperationTitle: "¿Por qué es necesario que todas las facciones republicanas cooperen?",
+      cooperationText1: "Durante las últimas décadas, debido a la experiencia insuficiente y la falta de reconocimiento de las tendencias republicanas, no ha sido posible que la oposición republicana forme una amplia coalición política y se afirme en la escena política iraní. Durante este período, los movimientos republicanos operaron como islas diferentes, lejos unos de otros, y por esta simple razón no pudieron convertirse en una alternativa capaz y reconocida en la sociedad iraní.",
+      cooperationText2: "Ahora, después de años de experiencia, el Congreso Conjunto, en un análisis de la situación real, ha llegado a un nuevo modelo para crear una coalición política más amplia entre los republicanos. Este nuevo modelo es la aceptación de los movimientos realmente existentes y el reconocimiento de las tendencias intelectuales y facciones políticas entre los republicanos, que podrá reunir a todas las tendencias republicanas en torno a un programa dinámico y convertirse en uno de los factores de cambio político (alternativa política) en Irán.",
+      quoteTitle: "«Nuestra fuerza radica en aceptar la pluralidad en Irán.»",
+      quoteText: "Irán, como cualquier país, es diverso y pluralista en todos los sentidos. La realidad es que cada parte de esta pluralidad inyecta una energía específica en la sociedad y busca una respuesta a sus demandas a cambio. El pluralismo en Irán en realidad exige participación pluralista. Por lo tanto, eliminar y negar parte de esta pluralidad es en realidad negar la participación de la sociedad con parte de ella. Esto significa ignorar la justicia, ignorar las necesidades humanas y, en última instancia, debilitar la sociedad.",
+      pluralismTitle: "Democracia Pluralista",
+      pluralismText1: "La sociedad política de Irán también es muy pluralista. Sin aceptar esta pluralidad, el empoderamiento en la arena política también será imposible. La democracia pluralista es precisamente el camino y el método para responder a la necesidad pluralista en Irán. Sin una democracia pluralista, lograr las esperanzas y aspiraciones del pueblo también será imposible.",
+      pluralismText2: "La diversidad étnica (baluchis, turcos, kurdos, persas, árabes, turcomanos, gilakis, mazandaraníes, etc.) en Irán no es una amenaza sino una oportunidad de oro para el progreso y desarrollo de Irán y una gran oportunidad para que este país se convierta en la capital del Medio Oriente en caso de democratización en los países del Medio Oriente.",
+      pluralismText3: "Que Irán también vea ese día.",
+      joinCTA: "Únete al Congreso",
+      readMore: "Leer Más",
+      learnMore: "Conoce Más Sobre Nosotros"
     },
     common: {
       loading: "Cargando..."

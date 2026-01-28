@@ -37,6 +37,7 @@
           <li><a href="#statements" data-i18n="nav.statements">Statements</a></li>
           <li><a href="#mou" data-i18n="nav.mou">MOU</a></li>
           <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+          <li><a href="#ethnic-groups" data-i18n="nav.ethnicGroups">Ethnic Groups</a></li>
         </ul>
         
         <div class="lang-selector">
@@ -118,6 +119,13 @@
         <p data-i18n="about.subtitle">United for democracy, federalism, and human rights in Iran</p>
       </div>
       
+      <!-- About Summary -->
+      <div class="about-summary">
+        <p data-i18n="aboutPage.introText1">The Congress of Democratic & Federalist Republicans is a collection of political and civil parties, groups, and activists that emerged from the experience of struggle in forming the broadest Republican coalition in the fight against the Islamic Republic regime.</p>
+        <p data-i18n="aboutPage.introText2">This struggle has made possible the proximity and united action of two Republican factions: the Democratic-Republicans (opponents of federalism) and the Federal Democrats (supporters of federalism).</p>
+        <a href="/about.html" class="btn btn-outline about-learn-more" data-i18n="aboutPage.learnMore">Learn More About Us</a>
+      </div>
+      
       <div class="about-grid">
         <div class="about-card animate-slide-up">
           <div class="about-card-icon">
@@ -168,8 +176,9 @@
     </div>
   </section>
 
+  <!-- Ethnic Groups Section -->
   <!-- Partners Section -->
-  <section class="section section-alt" id="partners">
+  <section class="section" id="partners">
     <div class="container">
       <div class="section-header">
         <h2 data-i18n="partners.title">Our Partners</h2>
@@ -328,6 +337,21 @@
     </div>
   </section>
 
+  <!-- Ethnic Groups Section -->
+  <section class="section section-alt" id="ethnic-groups">
+    <div class="container">
+      <div class="section-header">
+        <h2 data-i18n="ethnicGroups.title">Iran's Ethnic Diversity</h2>
+        <p data-i18n="ethnicGroups.subtitle">Celebrating the rich tapestry of cultures, languages, and traditions that make up Iran</p>
+      </div>
+      
+      <div class="ethnic-groups-grid" id="ethnic-groups-grid">
+        <!-- Ethnic groups will be loaded dynamically -->
+        <div class="loading" data-i18n="common.loading">Loading ethnic groups...</div>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
@@ -364,6 +388,41 @@
       </div>
     </div>
   </footer>
+
+  <!-- Ethnic Group Detail Lightbox Modal -->
+  <div class="ethnic-group-lightbox" id="ethnic-group-lightbox">
+    <div class="lightbox-overlay" onclick="closeEthnicGroupLightbox()"></div>
+    <div class="lightbox-content ethnic-lightbox-content">
+      <button class="lightbox-close" onclick="closeEthnicGroupLightbox()">&times;</button>
+      <div class="lightbox-body">
+        <div class="lightbox-image ethnic-lightbox-image">
+          <img id="ethnic-lightbox-image" src="" alt="Ethnic Group">
+        </div>
+        <div class="lightbox-info ethnic-lightbox-info">
+          <h2 id="ethnic-lightbox-name"></h2>
+          <div class="ethnic-lightbox-meta">
+            <div class="ethnic-meta-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+              <span id="ethnic-lightbox-population"></span>
+            </div>
+            <div class="ethnic-meta-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              <span id="ethnic-lightbox-region"></span>
+            </div>
+          </div>
+          <p class="ethnic-lightbox-description" id="ethnic-lightbox-description"></p>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Partner Detail Lightbox Modal -->
   <div class="partner-lightbox" id="partner-lightbox">

@@ -502,6 +502,33 @@ a:hover {
 }
 
 /* About Section */
+.about-summary {
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+.about-summary p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+}
+
+.about-summary p:last-of-type {
+  margin-bottom: 2rem;
+}
+
+.about-learn-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.about-learn-more:hover {
+  gap: 0.75rem;
+}
+
 .about-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -1985,4 +2012,318 @@ textarea.form-control {
 
 /* ============================================
    End Hero Carousel Styles
+   ============================================ */
+
+/* ============================================
+   Ethnic Groups Section Styles
+   ============================================ */
+
+/* Unity Banner */
+.ethnic-unity-banner {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  margin-bottom: 3rem;
+}
+
+.ethnic-unity-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.unity-banner-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
+  padding: 4rem 2rem 2rem;
+  text-align: center;
+  color: white;
+}
+
+.unity-banner-overlay h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.unity-banner-overlay p {
+  font-size: 1.25rem;
+  opacity: 0.95;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .ethnic-unity-banner {
+    height: 350px;
+  }
+  
+  .unity-banner-overlay h2 {
+    font-size: 1.75rem;
+  }
+  
+  .unity-banner-overlay p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ethnic-unity-banner {
+    height: 280px;
+  }
+  
+  .unity-banner-overlay {
+    padding: 3rem 1rem 1.5rem;
+  }
+  
+  .unity-banner-overlay h2 {
+    font-size: 1.5rem;
+  }
+  
+  .unity-banner-overlay p {
+    font-size: 0.9rem;
+  }
+}
+
+.ethnic-groups-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.ethnic-group-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+  cursor: pointer;
+}
+
+.ethnic-group-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.ethnic-group-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.ethnic-group-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.ethnic-group-card:hover .ethnic-group-image img {
+  transform: scale(1.05);
+}
+
+.ethnic-group-info {
+  padding: 1.5rem;
+}
+
+.ethnic-group-info h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.ethnic-group-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.ethnic-population,
+.ethnic-region {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: var(--bg-secondary);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+}
+
+.ethnic-group-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Ethnic Group Lightbox */
+.ethnic-group-lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-normal);
+}
+
+.ethnic-group-lightbox.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.ethnic-group-lightbox .lightbox-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.ethnic-lightbox-content {
+  position: relative;
+  background: white;
+  border-radius: var(--radius-lg);
+  max-width: 900px;
+  max-height: 90vh;
+  width: 90%;
+  overflow: hidden;
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+}
+
+.ethnic-lightbox-content .lightbox-body {
+  display: flex;
+  flex-direction: row;
+  max-height: 80vh;
+}
+
+.ethnic-lightbox-image {
+  flex: 0 0 45%;
+  max-height: 500px;
+}
+
+.ethnic-lightbox-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ethnic-lightbox-info {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.ethnic-lightbox-info h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.ethnic-lightbox-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.ethnic-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.ethnic-meta-item svg {
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.ethnic-lightbox-description {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+/* Responsive adjustments for ethnic groups */
+@media (max-width: 768px) {
+  .ethnic-groups-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .ethnic-lightbox-content .lightbox-body {
+    flex-direction: column;
+  }
+  
+  .ethnic-lightbox-image {
+    flex: 0 0 auto;
+    max-height: 250px;
+  }
+  
+  .ethnic-lightbox-info {
+    padding: 1.5rem;
+  }
+  
+  .ethnic-lightbox-info h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ethnic-groups-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .ethnic-group-image {
+    height: 180px;
+  }
+  
+  .ethnic-group-info {
+    padding: 1rem;
+  }
+  
+  .ethnic-group-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+/* RTL Support for Ethnic Groups */
+[dir="rtl"] .ethnic-group-meta {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .ethnic-meta-item {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .ethnic-lightbox-info {
+  text-align: right;
+}
+
+/* ============================================
+   End Ethnic Groups Section Styles
    ============================================ */

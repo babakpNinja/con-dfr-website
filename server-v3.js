@@ -617,6 +617,30 @@ app.get('/api/statements/:id', (req, res) => {
   }
 });
 
+// Get all ethnic groups
+app.get('/api/ethnic-groups', (req, res) => {
+  try {
+    const groups = db.prepare('SELECT * FROM ethnic_groups WHERE is_active = 1 ORDER BY display_order').all();
+    res.json(groups);
+  } catch (error) {
+    res.status(500).json({ error: 'Database error' });
+  }
+});
+
+// Get single ethnic group by slug
+app.get('/api/ethnic-groups/:slug', (req, res) => {
+  try {
+    const group = db.prepare('SELECT * FROM ethnic_groups WHERE slug = ? AND is_active = 1').get(req.params.slug);
+    
+    if (!group) {
+      return res.status(404).json({ error: 'Ethnic group not found' });
+    }
+    res.json(group);
+  } catch (error) {
+    res.status(500).json({ error: 'Database error' });
+  }
+});
+
 // Submit membership application
 app.post('/api/membership', (req, res) => {
   try {

@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Congress of Democratic & Federalist Republicans</title>
+  <meta name="description" content="Learn about the Congress of Democratic & Federalist Republicans - a coalition working towards a free, democratic, federal, and secular Iran.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <style>
+    /* About Page Specific Styles */
+    .about-page-hero {
+      background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+      padding: 120px 0 80px;
+      color: white;
+      text-align: center;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    }
+    
+    .about-page-hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #ffd700;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+    
+    .about-page-hero p {
+      font-size: 1.25rem;
+      color: #e2e8f0;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .about-content {
+      padding: 4rem 0;
+    }
+    
+    .about-section {
+      margin-bottom: 4rem;
+    }
+    
+    .about-section:last-child {
+      margin-bottom: 0;
+    }
+    
+    .about-section h2 {
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 3px solid var(--accent-color);
+      display: inline-block;
+    }
+    
+    .about-section p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text-color);
+      margin-bottom: 1.5rem;
+    }
+    
+    .about-section p:last-child {
+      margin-bottom: 0;
+    }
+    
+    .about-image {
+      width: 100%;
+      max-width: 800px;
+      margin: 2rem auto;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    }
+    
+    .about-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .objectives-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .objective-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      border-left: 4px solid var(--accent-color);
+    }
+    
+    .objective-card h3 {
+      font-size: 1.25rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+    
+    .objective-card p {
+      font-size: 1rem;
+      margin-bottom: 0;
+    }
+    
+    .quote-section {
+      background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+      padding: 4rem 2rem;
+      border-radius: 16px;
+      color: #ffffff;
+      text-align: center;
+      margin: 3rem 0;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    }
+    
+    .quote-section h3 {
+      font-size: 1.75rem;
+      font-style: italic;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      color: #ffd700;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+    
+    .quote-section p {
+      font-size: 1.1rem;
+      color: #e2e8f0;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+    
+    .back-to-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 500;
+      margin-bottom: 2rem;
+      transition: all 0.3s ease;
+    }
+    
+    .back-to-home:hover {
+      gap: 0.75rem;
+    }
+    
+    .back-to-home svg {
+      width: 20px;
+      height: 20px;
+    }
+    
+    /* RTL Support */
+    [dir="rtl"] .objective-card {
+      border-left: none;
+      border-right: 4px solid var(--accent-color);
+    }
+    
+    [dir="rtl"] .back-to-home {
+      flex-direction: row-reverse;
+    }
+    
+    @media (max-width: 768px) {
+      .about-page-hero {
+        padding: 100px 0 60px;
+      }
+      
+      .about-page-hero h1 {
+        font-size: 2rem;
+      }
+      
+      .about-section h2 {
+        font-size: 1.5rem;
+      }
+      
+      .quote-section h3 {
+        font-size: 1.35rem;
+      }
+    }
+    
+    /* Ensure language dropdown works */
+    .lang-dropdown.show {
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: translateY(0) !important;
+    }
+  </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="header scrolled" id="header">
+    <div class="header-content">
+      <a href="/" class="logo">
+        <img src="https://con-dfr.org/wp-content/uploads/2026/01/2-2-768x293.jpg" alt="CON-DFR Logo" id="logo-img">
+        <div class="logo-text">
+          <span id="logo-title">CON-DFR</span>
+        </div>
+      </a>
+      
+      <nav class="nav">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="/" data-i18n="nav.home">Home</a></li>
+          <li><a href="/#about" data-i18n="nav.about">About</a></li>
+          <li><a href="/#partners" data-i18n="nav.partners">Partners</a></li>
+          <li><a href="/#statements" data-i18n="nav.statements">Statements</a></li>
+          <li><a href="/#mou" data-i18n="nav.mou">MOU</a></li>
+          <li><a href="/#contact" data-i18n="nav.contact">Contact</a></li>
+          <li><a href="/#ethnic-groups" data-i18n="nav.ethnicGroups">Ethnic Groups</a></li>
+        </ul>
+        
+        <div class="lang-selector">
+          <button class="lang-btn" id="lang-btn">
+            <span id="current-lang">EN</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </button>
+          <div class="lang-dropdown" id="lang-dropdown">
+            <a href="#" data-lang="en" class="active">🇬🇧 English</a>
+            <a href="#" data-lang="fa">🇮🇷 فارسی</a>
+            <a href="#" data-lang="tr">🇹🇷 Türkçe</a>
+            <a href="#" data-lang="az">🇦🇿 Azərbaycan</a>
+            <a href="#" data-lang="ar">🇸🇦 العربية</a>
+            <a href="#" data-lang="zh">🇨🇳 中文</a>
+            <a href="#" data-lang="es">🇪🇸 Español</a>
+          </div>
+        </div>
+        
+        <a href="/membership.html" class="btn btn-primary btn-sm" data-i18n="nav.join">Join Us</a>
+        
+        <button class="mobile-menu-btn" id="mobile-menu-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- About Page Hero -->
+  <section class="about-page-hero">
+    <div class="container">
+      <h1 data-i18n="aboutPage.heroTitle">About Us</h1>
+      <p data-i18n="aboutPage.heroSubtitle">Building a democratic, federal, and secular future for Iran</p>
+    </div>
+  </section>
+
+  <!-- About Content -->
+  <main class="about-content">
+    <div class="container">
+      <a href="/" class="back-to-home">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        <span data-i18n="aboutPage.backToHome">Back to Home</span>
+      </a>
+
+      <!-- Introduction Section -->
+      <section class="about-section">
+        <h2 data-i18n="aboutPage.introTitle">Introduction</h2>
+        <p data-i18n="aboutPage.introText1">The Congress of Democratic & Federalist Republicans is a collection of political and civil parties, groups, and activists that emerged from the experience of struggle in forming the broadest Republican coalition in the fight against the Islamic Republic regime.</p>
+        <p data-i18n="aboutPage.introText2">This struggle has made possible the proximity and united action of two Republican factions: the Democratic-Republicans (opponents of federalism) and the Federal Democrats (supporters of federalism).</p>
+        <p data-i18n="aboutPage.introText3">This very valuable theoretical experience or democratic model for the unity of action among Republicans, arising from the long years of dialogue and bargaining by supporters of these two intellectual tendencies or two political wings within the Republican movement.</p>
+      </section>
+
+      <!-- Objectives Section -->
+      <section class="about-section">
+        <h2 data-i18n="aboutPage.objectivesTitle">Objectives</h2>
+        <p data-i18n="aboutPage.objectivesIntro">The ultimate goal of the Congress is to join with other coalitions, parties, organizations, and Republican political and civil activists to establish a strategic council (temporary parliament) to manage the transition period and the non-violent transition from the stage of overthrowing the Islamic Republic regime to the establishment of the Constituent Assembly. To achieve this ultimate goal, a two-stage strategy for the Congress is necessary.</p>
+        
+        <div class="objectives-grid">
+          <div class="objective-card">
+            <h3 data-i18n="aboutPage.stage1Title">Stage One</h3>
+            <p data-i18n="aboutPage.stage1Text">Initiating bilateral or multilateral talks with coalitions, parties, organizations, and political and civil activists to create convergence, coordination, and create a joint program for the transition period.</p>
+          </div>
+          <div class="objective-card">
+            <h3 data-i18n="aboutPage.stage2Title">Stage Two</h3>
+            <p data-i18n="aboutPage.stage2Text">Creating an appropriate platform based on recognized democratic criteria for establishing a strategic council (temporary parliament) to manage the transition period in coordination with all Republican political forces and according to previous planning.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Cooperation Section -->
+      <section class="about-section">
+        <h2 data-i18n="aboutPage.cooperationTitle">Why is it necessary for all Republican factions to cooperate?</h2>
+        <p data-i18n="aboutPage.cooperationText1">Over the past decades, due to insufficient experience and lack of recognition of Republican tendencies, it has not been possible for the Republican opposition to form a broad political coalition and assert itself in the Iranian political scene. During this period, Republican movements operated like different islands, far from each other, and for this simple reason they could not become a capable and recognized alternative in Iranian society.</p>
+        <p data-i18n="aboutPage.cooperationText2">Now, after years of experience, the Joint Congress, in an analysis of the actual situation, has reached a new model for creating a broader political coalition among Republicans. This new model is the acceptance of actually existing movements and the recognition of intellectual tendencies and political factions among Republicans, which will be able to bring all Republican tendencies together around a dynamic program and become one of the factors of political change (political alternative) in Iran.</p>
+      </section>
+
+      <!-- Quote Section -->
+      <div class="quote-section">
+        <h3 data-i18n="aboutPage.quoteTitle">«Our strength lies in accepting plurality in Iran.»</h3>
+        <p data-i18n="aboutPage.quoteText">Iran, like any country, is diverse and pluralistic in every way. The reality is that each part of this plurality injects a specific energy into society and seeks a response to its demands in return. Pluralism in Iran actually demands pluralistic participation. Therefore, eliminating and denying part of this plurality is actually denying society's participation with part of it. This means ignoring justice, ignoring human needs, and ultimately weakening society. Continuing this approach will ultimately lead to polarization in society and will impose social decline on the country. Therefore, paying attention to pluralism means increasing empowerment in society.</p>
+      </div>
+
+      <!-- Pluralism Section -->
+      <section class="about-section">
+        <h2 data-i18n="aboutPage.pluralismTitle">Pluralistic Democracy</h2>
+        <p data-i18n="aboutPage.pluralismText1">Iran's political society is also very pluralistic. Without accepting this plurality, empowerment in the political arena will also be impossible. Pluralistic democracy is precisely the way and method to respond to the pluralistic need in Iran. Without a pluralistic democracy, achieving the hopes and aspirations of the people will also be impossible.</p>
+        <p data-i18n="aboutPage.pluralismText2">The ethnic diversity (Baloch, Turk, Kurd, Persian, Arab, Turkmen, Gilak, Mazandarani, etc.) in Iran is not a threat but a golden opportunity for the progress and development of Iran and a great opportunity for this country to become the capital of the Middle East in the event of democratization in the countries of the Middle East.</p>
+        <p data-i18n="aboutPage.pluralismText3" style="font-weight: 600; font-style: italic; color: var(--primary-color);">May Iran also see that day.</p>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="about-section" style="text-align: center; padding-top: 2rem;">
+        <a href="/membership.html" class="btn btn-primary btn-lg" data-i18n="aboutPage.joinCTA">Join the Congress</a>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4 data-i18n="footer.about">About CON-DFR</h4>
+          <p data-i18n="footer.aboutText">The Congress of Democratic & Federalist Republicans is a coalition of organizations and individuals working towards a free, democratic, federal, and secular Iran.</p>
+        </div>
+        
+        <div class="footer-section">
+          <h4 data-i18n="footer.quickLinks">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="/#about" data-i18n="nav.about">About</a></li>
+            <li><a href="/#partners" data-i18n="nav.partners">Partners</a></li>
+            <li><a href="/#statements" data-i18n="nav.statements">Statements</a></li>
+            <li><a href="/#mou" data-i18n="nav.mou">MOU</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4 data-i18n="footer.connect">Connect</h4>
+          <ul class="footer-links">
+            <li><a href="https://x.com/con_dem_fed_rep/" target="_blank">X (Twitter)</a></li>
+            <li><a href="https://www.instagram.com/con_dem_fed_rep/" target="_blank">Instagram</a></li>
+            <li><a href="https://t.me/con_dfr" target="_blank">Telegram</a></li>
+            <li><a href="https://www.youtube.com/@Con_Dem_Fed_Rep" target="_blank">YouTube</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>© 2025 Congress of Democratic & Federalist Republicans. <span data-i18n="footer.rights">All rights reserved.</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/translations.js"></script>
+  <script>
+    // Wait for translations to be available
+    (function() {
+      // Language functionality for about page
+      let currentLang = localStorage.getItem('lang') || 'en';
+      
+      // RTL languages
+      const rtlLanguages = ['fa', 'ar'];
+      
+      // Language display names
+      const langNames = {
+        en: 'EN',
+        fa: 'فا',
+        tr: 'TR',
+        az: 'AZ',
+        ar: 'ع',
+        zh: '中',
+        es: 'ES'
+      };
+      
+      function setLanguage(lang) {
+        if (!translations || !translations[lang]) {
+          console.error('Translations not available for:', lang);
+          return;
+        }
+        
+        currentLang = lang;
+        localStorage.setItem('lang', lang);
+        
+        // Update HTML dir attribute for RTL languages
+        const isRTL = rtlLanguages.includes(lang);
+        document.documentElement.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
+        document.documentElement.setAttribute('lang', lang);
+        
+        // Update current language display
+        const langDisplay = document.getElementById('current-lang');
+        if (langDisplay) {
+          langDisplay.textContent = langNames[lang] || lang.toUpperCase();
+        }
+        
+        // Update active state in dropdown
+        document.querySelectorAll('.lang-dropdown a').forEach(a => {
+          a.classList.toggle('active', a.dataset.lang === lang);
+        });
+        
+        // Translate page
+        translatePage();
+      }
+      
+      function translatePage() {
+        if (typeof translations === 'undefined') {
+          console.error('Translations object not found!');
+          return;
+        }
+        
+        const t = translations[currentLang];
+        if (!t) {
+          console.error('No translations found for language:', currentLang);
+          return;
+        }
+        
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.dataset.i18n;
+          const value = getNestedValue(t, key);
+          if (value) {
+            el.textContent = value;
+          }
+        });
+      }
+      
+      function getNestedValue(obj, path) {
+        return path.split('.').reduce((acc, part) => acc && acc[part], obj);
+      }
+      
+      // Initialize when DOM is ready
+      function init() {
+        // Check if translations loaded
+        if (typeof translations === 'undefined') {
+          console.error('Translations not loaded!');
+          return;
+        }
+        
+        // Set initial language
+        setLanguage(currentLang);
+        
+        // Language selector
+        const langBtn = document.getElementById('lang-btn');
+        const langDropdown = document.getElementById('lang-dropdown');
+        
+        if (langBtn && langDropdown) {
+          langBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            langDropdown.classList.toggle('show');
+          });
+          
+          // Add click handlers to each language option
+          langDropdown.querySelectorAll('a[data-lang]').forEach(function(option) {
+            option.addEventListener('click', function(e) {
+              e.preventDefault();
+              e.stopPropagation();
+              var lang = this.getAttribute('data-lang');
+              setLanguage(lang);
+              langDropdown.classList.remove('show');
+            });
+          });
+          
+          // Close dropdown when clicking outside
+          document.addEventListener('click', function(e) {
+            if (!langBtn.contains(e.target) && !langDropdown.contains(e.target)) {
+              langDropdown.classList.remove('show');
+            }
+          });
+        }
+        
+        // Mobile menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const navLinks = document.getElementById('nav-links');
+        
+        if (mobileMenuBtn && navLinks) {
+          mobileMenuBtn.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
+          });
+        }
+        
+        // Header scroll effect - keep it always scrolled on about page
+        const header = document.getElementById('header');
+        if (header) {
+          header.classList.add('scrolled');
+        }
+      }
+      
+      // Run init when DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
+  </script>
+</body>
+</html>

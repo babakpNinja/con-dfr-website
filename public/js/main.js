@@ -16,14 +16,20 @@ const navLinks = document.getElementById('nav-links');
 let pageContent = {};
 
 // Initialize
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+  // First load page content from API (must be done before language init)
+  await loadPageContent();
+  
+  // Then initialize language (which will use the loaded content)
   initLanguage();
+  
+  // Initialize other components
   initScrollEffects();
   initNavigation();
   initLanguageSelector();
-  loadPageContent(); // Load content from admin panel
   loadPartners();
   loadStatements();
+  loadEthnicGroups();
   initPartnerTabs();
   initSmoothScroll();
 });
@@ -58,9 +64,10 @@ function setLanguage(lang) {
   // Update hero content from API data
   updateHeroContent();
   
-  // Reload partners and statements with new language
+  // Reload partners, statements, and ethnic groups with new language
   loadPartners();
   loadStatements();
+  loadEthnicGroups();
   
   // Dispatch language changed event for other components
   document.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang } }));
@@ -69,7 +76,15 @@ function setLanguage(lang) {
 function translatePage() {
   const t = translations[currentLang];
   
+  // Elements that are loaded from API should be skipped
+  const apiLoadedElements = ['hero-title', 'hero-subtitle'];
+  
   document.querySelectorAll('[data-i18n]').forEach(el => {
+    // Skip elements that are loaded from API (they have IDs in apiLoadedElements)
+    if (el.id && apiLoadedElements.includes(el.id)) {
+      return;
+    }
+    
     const key = el.dataset.i18n;
     const value = getNestedValue(t, key);
     if (value) {
@@ -92,24 +107,28 @@ async function loadPageContent() {
       contentArray.forEach(item => {
         pageContent[item.section_key] = item;
       });
-      // Update hero content with loaded data
-      updateHeroContent();
+      console.log('Page content loaded:', Object.keys(pageContent));
     }
   } catch (error) {
-    console.log('Using default content');
+    console.log('Using default content:', error);
   }
 }
 
 // Update hero section with content from admin panel
 function updateHeroContent() {
+  console.log('updateHeroContent called, currentLang:', currentLang, 'pageContent keys:', Object.keys(pageContent));
+  
   // Update hero main title
   const heroTitle = document.getElementById('hero-title');
   if (heroTitle && pageContent.hero_main_title) {
     const content = pageContent.hero_main_title;
     const title = content[`content_${currentLang}`] || content.content_en || content.content_fa;
+    console.log('Setting hero title to:', title);
     if (title) {
       heroTitle.textContent = title;
     }
+  } else {
+    console.log('Hero title not updated - element:', !!heroTitle, 'content:', !!pageContent.hero_main_title);
   }
   
   // Update hero subtitle
@@ -117,9 +136,12 @@ function updateHeroContent() {
   if (heroSubtitle && pageContent.hero_subtitle) {
     const content = pageContent.hero_subtitle;
     const subtitle = content[`content_${currentLang}`] || content.content_en || content.content_fa;
+    console.log('Setting hero subtitle to:', subtitle);
     if (subtitle) {
       heroSubtitle.textContent = subtitle;
     }
+  } else {
+    console.log('Hero subtitle not updated - element:', !!heroSubtitle, 'content:', !!pageContent.hero_subtitle);
   }
   
   // Update about section title
@@ -348,6 +370,119 @@ function escapeHtml(text) {
   const div = document.createElement('div');
   div.textContent = text;
   return div.innerHTML;
+}
+
+// Ethnic Groups
+async function loadEthnicGroups() {
+  try {
+    const response = await fetch('/api/ethnic-groups');
+    const groups = await response.json();
+    renderEthnicGroups(groups);
+  } catch (error) {
+    console.error('Error loading ethnic groups:', error);
+    const container = document.getElementById('ethnic-groups-grid');
+    if (container) {
+      container.innerHTML = '<p>Error loading ethnic groups.</p>';
+    }
+  }
+}
+
+function renderEthnicGroups(groups) {
+  const container = document.getElementById('ethnic-groups-grid');
+  if (!container) return;
+  
+  const lang = currentLang || 'en';
+  
+  if (!groups || groups.length === 0) {
+    container.innerHTML = '<p>No ethnic groups available.</p>';
+    return;
+  }
+  
+  container.innerHTML = groups.map(group => {
+    const name = group[`name_${lang}`] || group.name_en || 'Unknown';
+    const description = group[`description_${lang}`] || group.description_en || '';
+    const region = group[`region_${lang}`] || group.region_en || '';
+    const population = group.population || '';
+    
+    // Truncate description for card display
+    const shortDesc = description.length > 150 ? description.substring(0, 150) + '...' : description;
+    
+    return `
+      <div class="ethnic-group-card" onclick="openEthnicGroupModal('${group.slug}')">
+        <div class="ethnic-group-image">
+          <img src="${group.image_url}" alt="${escapeHtml(name)}" loading="lazy" onerror="this.src='/images/hero/hero1.png'">
+        </div>
+        <div class="ethnic-group-info">
+          <h3>${escapeHtml(name)}</h3>
+          <div class="ethnic-group-meta">
+            <span class="ethnic-population">${escapeHtml(population)}</span>
+            <span class="ethnic-region">${escapeHtml(region)}</span>
+          </div>
+          <p class="ethnic-group-desc">${escapeHtml(shortDesc)}</p>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+// Store current ethnic group data for modal
+let currentEthnicGroupData = null;
+
+async function openEthnicGroupModal(slug) {
+  try {
+    const response = await fetch(`/api/ethnic-groups/${slug}`);
+    const group = await response.json();
+    currentEthnicGroupData = group;
+    showEthnicGroupLightbox(group);
+  } catch (error) {
+    console.error('Error loading ethnic group details:', error);
+  }
+}
+
+function showEthnicGroupLightbox(group) {
+  const lightbox = document.getElementById('ethnic-group-lightbox');
+  if (!lightbox) return;
+  
+  const lang = currentLang || 'en';
+  const name = group[`name_${lang}`] || group.name_en || 'Unknown';
+  const description = group[`description_${lang}`] || group.description_en || '';
+  const region = group[`region_${lang}`] || group.region_en || '';
+  const population = group.population || '';
+  
+  document.getElementById('ethnic-lightbox-image').src = group.image_url;
+  document.getElementById('ethnic-lightbox-image').alt = name;
+  document.getElementById('ethnic-lightbox-name').textContent = name;
+  document.getElementById('ethnic-lightbox-description').textContent = description;
+  document.getElementById('ethnic-lightbox-population').textContent = population;
+  document.getElementById('ethnic-lightbox-region').textContent = region;
+  
+  // Update direction for RTL languages
+  const isRTL = ['fa', 'ar'].includes(lang);
+  const infoSection = document.querySelector('.ethnic-lightbox-info');
+  if (infoSection) {
+    infoSection.style.direction = isRTL ? 'rtl' : 'ltr';
+    infoSection.style.textAlign = isRTL ? 'right' : 'left';
+  }
+  
+  lightbox.classList.add('show');
+  document.body.style.overflow = 'hidden';
+  document.addEventListener('keydown', handleEthnicLightboxEscape);
+}
+
+function closeEthnicGroupLightbox() {
+  const lightbox = document.getElementById('ethnic-group-lightbox');
+  if (lightbox) {
+    lightbox.classList.remove('show');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', handleEthnicLightboxEscape);
+    currentEthnicGroupData = null;
+  }
+}
+
+function handleEthnicLightboxEscape(e) {
+  if (e.key === 'Escape') {
+    closeEthnicGroupLightbox();
+  }
 }
 
 // Partners

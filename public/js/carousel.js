@@ -89,24 +89,26 @@
 
     currentSlide = index;
 
-    // Update hero content if slide has custom title/subtitle
+    // Update hero content based on current slide
     const currentImage = heroImages[index];
-    const lang = window.currentLanguage || 'en';
+    const lang = window.currentLanguage || localStorage.getItem('lang') || 'en';
     
-    // Only update if the image has custom titles
-    if (currentImage[`title_${lang}`] || currentImage.title_en) {
-      // Optional: Update hero title/subtitle based on current slide
-      // Uncomment below to enable per-slide titles
-      /*
-      const heroTitle = document.getElementById('hero-title');
-      const heroSubtitle = document.getElementById('hero-subtitle');
-      if (heroTitle && currentImage[`title_${lang}`]) {
-        heroTitle.textContent = currentImage[`title_${lang}`] || currentImage.title_en;
+    // Update hero title and subtitle for each slide
+    const heroTitle = document.getElementById('hero-title');
+    const heroSubtitle = document.getElementById('hero-subtitle');
+    
+    if (heroTitle) {
+      const title = currentImage[`title_${lang}`] || currentImage.title_en || '';
+      if (title) {
+        heroTitle.textContent = title;
       }
-      if (heroSubtitle && currentImage[`subtitle_${lang}`]) {
-        heroSubtitle.textContent = currentImage[`subtitle_${lang}`] || currentImage.subtitle_en;
+    }
+    
+    if (heroSubtitle) {
+      const subtitle = currentImage[`subtitle_${lang}`] || currentImage.subtitle_en || '';
+      if (subtitle) {
+        heroSubtitle.textContent = subtitle;
       }
-      */
     }
   }
 
@@ -231,6 +233,14 @@
   } else {
     initCarousel();
   }
+
+  // Listen for language changes and update hero content
+  document.addEventListener('languageChanged', (e) => {
+    if (heroImages.length > 0) {
+      // Re-render current slide content with new language
+      goToSlide(currentSlide);
+    }
+  });
 
   // Expose functions globally for potential external use
   window.heroCarousel = {
