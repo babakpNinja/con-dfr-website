@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://con-dfr.org/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://con-dfr.org/"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://con-dfr.org/?lang=fa"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://con-dfr.org/?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="az" href="https://con-dfr.org/?lang=az"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://con-dfr.org/?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://con-dfr.org/?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://con-dfr.org/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://con-dfr.org/"/>
+    <lastmod>2025-01-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- About Page -->
+  <url>
+    <loc>https://con-dfr.org/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://con-dfr.org/about.html"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://con-dfr.org/about.html?lang=fa"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://con-dfr.org/about.html?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="az" href="https://con-dfr.org/about.html?lang=az"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://con-dfr.org/about.html?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://con-dfr.org/about.html?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://con-dfr.org/about.html?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://con-dfr.org/about.html"/>
+    <lastmod>2025-01-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Membership Page -->
+  <url>
+    <loc>https://con-dfr.org/membership.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://con-dfr.org/membership.html"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://con-dfr.org/membership.html?lang=fa"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://con-dfr.org/membership.html?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="az" href="https://con-dfr.org/membership.html?lang=az"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://con-dfr.org/membership.html?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://con-dfr.org/membership.html?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://con-dfr.org/membership.html?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://con-dfr.org/membership.html"/>
+    <lastmod>2025-01-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Statement Page -->
+  <url>
+    <loc>https://con-dfr.org/statement.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://con-dfr.org/statement.html"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://con-dfr.org/statement.html?lang=fa"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://con-dfr.org/statement.html?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="az" href="https://con-dfr.org/statement.html?lang=az"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://con-dfr.org/statement.html?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://con-dfr.org/statement.html?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://con-dfr.org/statement.html?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://con-dfr.org/statement.html"/>
+    <lastmod>2025-01-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+</urlset>
