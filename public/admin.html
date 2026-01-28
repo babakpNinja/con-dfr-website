@@ -1502,6 +1502,10 @@
       document.getElementById('partner-website').value = partner?.website_url || '';
       document.getElementById('partner-active').checked = partner?.is_active !== 0;
       
+      // Reset file input
+      const fileInput = document.getElementById('partner-image');
+      fileInput.value = '';
+      
       document.getElementById('partner-lang-contents').innerHTML = languages.map(lang => `
         <div class="lang-content ${lang === 'en' ? 'active' : ''}" data-lang="${lang}">
           <div class="form-group">
@@ -1555,9 +1559,20 @@
       const url = id ? `/api/admin/partners/${id}` : '/api/admin/partners';
       const method = id ? 'PUT' : 'POST';
       
-      await fetch(url, { method, body: formData });
-      closeModal('partner-modal');
-      loadPartners();
+      try {
+        const res = await fetch(url, { method, body: formData, credentials: 'include' });
+        const data = await res.json();
+        
+        if (res.ok && data.success) {
+          closeModal('partner-modal');
+          loadPartners();
+        } else {
+          alert('Error saving partner: ' + (data.error || 'Unknown error'));
+        }
+      } catch (err) {
+        console.error('Save partner error:', err);
+        alert('Failed to save partner. Please try again.');
+      }
     }
 
     async function deletePartner(id) {
